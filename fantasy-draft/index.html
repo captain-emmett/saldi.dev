@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081018">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Draft 26">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<title>2026 Fantasy Draft Command Center</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="mark">26</div><div><h1>Draft Command Center</h1><small>2026 • desktop + mobile • persistent</small></div></div>
+    <div class="pulse">
+      <div class="pulse-block"><div class="pulse-label">On the clock</div><div class="pulse-value" id="topCurrentPick">Pick 1</div></div>
+      <div class="pulse-block"><div class="pulse-label">Current team</div><div class="pulse-value" id="topCurrentTeam">Team 1</div></div>
+      <div class="pulse-block"><div class="pulse-label">Your next</div><div class="pulse-value accent" id="topNextPick">8</div></div>
+      <div class="pulse-block"><div class="pulse-label">Round</div><div class="pulse-value" id="topRound">1 / 15</div></div>
+    </div>
+    <div class="top-actions"><button class="button" id="undoBtn">↶ <span>Undo</span></button><button class="button" id="saveBtn">⇩ <span>Save</span></button><button class="button danger" id="resetBtn">Reset</button></div>
+  </header>
+  <nav class="tabs desktop-tabs">
+    <button class="tab active" data-view="command">Command Center</button>
+    <button class="tab" data-view="picks">Top 5 Picks</button>
+    <button class="tab" data-view="tiers">Tier Board</button>
+    <button class="tab" data-view="team">My Team</button>
+    <button class="tab" data-view="log">Draft Log</button>
+    <button class="tab" data-view="settings">Settings</button>
+    <button class="tab" data-view="sources">Sources</button>
+  </nav>
+
+  <section class="view active" id="view-command">
+    <div class="mobile-command-pulse">
+      <div class="mobile-pulse-card">
+        <div class="mobile-pulse-metric"><b id="mobilePick">1</b><span>On clock</span></div>
+        <div class="mobile-pulse-metric"><b id="mobileRound">1</b><span>Round</span></div>
+        <div class="mobile-pulse-metric"><b id="mobileNext">8</b><span>Your next</span></div>
+      </div>
+      <div class="mobile-best" id="mobileRecommendation"></div>
+    </div>
+    <div class="layout">
+      <aside class="left-rail">
+        <div class="panel">
+          <div class="panel-head"><h2>Your Draft</h2><span class="subtle" id="draftProgress">0 / 150</span></div>
+          <div class="panel-body">
+            <div class="metric-grid"><div class="metric"><b id="mineCount">0</b><span>My players</span></div><div class="metric"><b id="targetsLeft">0</b><span>Targets left</span></div></div>
+            <div class="subtle" style="margin-bottom:6px">Upcoming picks</div><div class="next-picks" id="nextPicks"></div>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:10px">
+          <div class="panel-head"><h2>Roster</h2><span class="subtle" id="rosterStatus"></span></div>
+          <div class="panel-body"><div class="roster-slots" id="rosterSlots"></div></div>
+        </div>
+      </aside>
+
+      <main class="panel board center-board">
+        <div class="panel-head"><h2>Available Board</h2><span class="subtle" id="availableCount"></span></div>
+        <div class="board-toolbar">
+          <input class="search" id="searchInput" placeholder="Search player or team…">
+          <div class="chips" id="posChips"></div>
+          <label class="checkline"><input type="checkbox" id="targetsOnly"> ★ targets</label>
+        </div>
+        <div class="player-table-wrap">
+          <table class="player-table"><thead><tr><th></th><th>RK</th><th>Player</th><th>POS</th><th>Tier</th><th class="hide-mobile">Team / Bye</th><th class="hide-mobile">Trend</th><th>Value</th></tr></thead><tbody id="playerRows"></tbody></table>
+        </div>
+        <div class="mobile-player-list" id="mobilePlayerList"></div>
+      </main>
+
+      <aside class="right-rail">
+        <div class="panel">
+          <div class="panel-head"><h2>Selected Player</h2><span class="subtle">M / X / S</span></div>
+          <div class="panel-body" id="selectedPanel"></div>
+        </div>
+        <div class="panel" style="margin-top:10px">
+          <div class="panel-head"><h2>Best Fits Right Now</h2><span class="subtle" id="strategyLabel"></span></div>
+          <div class="panel-body"><div class="rec-list" id="recommendations"></div><div class="callout" id="tierAlert"></div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="view" id="view-picks">
+    <div class="full">
+      <div class="picks-hero">
+        <div><span class="eyebrow">Team-aware draft board</span><h2>Top 5 Picks for Your Team</h2><p id="topPicksContext"></p></div>
+        <div class="picks-on-clock"><span>Planning for</span><strong id="topPicksAt">Pick 8</strong></div>
+      </div>
+      <div class="top-picks-grid" id="topPicksList"></div>
+      <div class="team-card top-picks-note"><strong>How these picks are ranked</strong><span>Player value is balanced with open starters, FLEX construction, position scarcity, bye-week load, starred targets, and your selected draft strategy.</span></div>
+    </div>
+  </section>
+  <section class="view" id="view-tiers"><div class="full"><div class="tier-toolbar" id="tierPosChips"></div><div class="tier-stack" id="tierBoard"></div></div></section>
+  <section class="view" id="view-team"><div class="full"><div class="grid2"><div class="team-card"><h3>Roster Construction</h3><div id="teamRosterFull"></div></div><div class="team-card"><h3>Bye Week Load</h3><div class="bye-bars" id="byeBars"></div><div class="subtle" style="margin-top:9px">Counts your drafted players. Watch clusters among starters, but don’t pass major value solely to avoid a bye overlap.</div></div></div><div class="team-card" style="margin-top:12px"><h3>Roster Read</h3><div id="rosterRead"></div></div></div></section>
+  <section class="view" id="view-log"><div class="full"><div class="team-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h3 style="margin:0">Draft Log</h3><button class="button small" id="csvBtn">Export CSV</button></div><div style="overflow:auto"><table class="draft-log"><thead><tr><th>Pick</th><th>Round</th><th>Team</th><th>Player</th><th>Pos</th><th>Rank</th></tr></thead><tbody id="draftLog"></tbody></table></div></div></div></section>
+  <section class="view" id="view-settings"><div class="full"><div class="settings-card"><h3>League & Draft</h3><div class="settings-grid">
+    <div class="field"><label>Teams</label><select id="setTeams"><option>8</option><option selected>10</option><option>12</option><option>14</option></select></div>
+    <div class="field"><label>My draft slot</label><input id="setSlot" type="number" min="1" max="14" value="8"></div>
+    <div class="field"><label>Rounds</label><input id="setRounds" type="number" min="8" max="25" value="15"></div>
+    <div class="field"><label>Draft method</label><select id="setMethod"><option>Snake</option><option>Linear</option></select></div>
+    <div class="field"><label>Scoring</label><select id="setScoring"><option>Full PPR</option><option>Half PPR</option><option>Standard</option></select></div>
+    <div class="field"><label>Draft strategy</label><select id="setStrategy"><option>Balanced</option><option>Best Player Available</option><option>Late QB</option><option>Hero RB</option><option>Zero RB</option><option>WR Heavy</option></select></div>
+    <div class="field"><label>Hide K/DST until round</label><input id="setSpecialRound" type="number" min="1" max="25" value="12"></div>
+  </div></div>
+  <div class="settings-card" style="margin-top:12px"><h3>Roster Slots</h3><div class="slot-grid" id="slotSettings"></div><div class="subtle" style="margin-top:9px">FLEX accepts RB/WR/TE. Bench is unrestricted. Changes update recommendations immediately.</div></div>
+  <div class="settings-card" style="margin-top:12px"><h3>Backup & Transfer</h3><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="button" id="exportStateBtn">Export State JSON</button><label class="button" for="importStateInput">Import State JSON</label><input id="importStateInput" type="file" accept="application/json" hidden></div><p class="subtle">The app autosaves to this browser after every action. Export a JSON backup if you want to move the draft to another computer.</p></div>
+  </div></section>
+  <section class="view" id="view-sources"><div class="full"><div class="grid2">
+    <div class="source-card"><h3>Rankings</h3><p>Top-100 Full-PPR ranks are the Aug. 27, 2026 RotoWire snapshot carried forward from your workbook; deeper ranks retain the workbook’s legacy tier data.</p><a href="https://www.rotowire.com/football/cheatsheet-ppr.php" target="_blank">rotowire.com/football/cheatsheet-ppr.php</a></div>
+    <div class="source-card"><h3>Kicker & Defense</h3><p>Dedicated K and DST consensus boards avoid the name-reconciliation bug that broke special teams in the original workbook.</p><a href="https://www.fantasypros.com/nfl/fantasy-football-rankings/k.php" target="_blank">FantasyPros K rankings</a><br><a href="https://www.fantasypros.com/nfl/fantasy-football-rankings/dst.php" target="_blank">FantasyPros DST rankings</a></div>
+    <div class="source-card"><h3>2026 Bye Weeks</h3><p>Bye-week mapping follows the NFL’s 2026 schedule release: byes run Weeks 5–14, with no byes in Week 12.</p><a href="https://www.nfl.com/_amp/2026-nfl-schedule-release-every-team-bye-week" target="_blank">NFL 2026 bye weeks</a></div>
+    <div class="source-card"><h3>Draft Context</h3><p>The small TARGET / RISER / FALLER / RISK tags come from current FantasyPros Aug. 2026 analysis. They are context, not hard overrides of the ranking model.</p><a href="https://www.fantasypros.com/2026/08/22-must-have-fantasy-football-draft-targets-2026/" target="_blank">Must-have targets</a><br><a href="https://www.fantasypros.com/2026/08/10-fantasy-football-adp-risers-fallers-2026/" target="_blank">ADP risers & fallers</a><br><a href="https://www.fantasypros.com/2026/08/fantasy-football-7-players-who-could-lose-your-league-2026/" target="_blank">Risk / avoid discussion</a></div>
+  </div><div class="source-card" style="margin-top:12px"><h3>How the recommendation score works</h3><p>It starts with the selected scoring rank, then adjusts for how far a player has fallen relative to the current pick, open starter slots, positional tier scarcity, your starred targets, bye-week concentration and your selected draft strategy. Kickers and defenses are intentionally suppressed until the late rounds unless you filter directly to those positions. This is a decision aid—not a projection model.</p></div></div></section>
+</div>
+<div class="mobile-action-sheet" id="mobileActionSheet"></div>
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav-btn active" data-mobile-view="command"><span class="nav-icon">⌂</span><span>Board</span></button>
+  <button class="mobile-nav-btn" data-mobile-view="picks"><span class="nav-icon">★</span><span>Top 5</span></button>
+  <button class="mobile-nav-btn" data-mobile-view="tiers"><span class="nav-icon">▤</span><span>Tiers</span></button>
+  <button class="mobile-nav-btn" data-mobile-view="team"><span class="nav-icon">♟</span><span>My Team</span></button>
+  <button class="mobile-nav-btn" id="mobileMoreBtn"><span class="nav-icon">•••</span><span>More</span></button>
+</nav>
+<div class="mobile-more-menu" id="mobileMoreMenu">
+  <div class="mobile-more-card">
+    <h3>Draft Command Center</h3>
+    <div class="mobile-more-grid">
+      <button class="button" data-more-view="log">≡ Draft Log</button>
+      <button class="button" data-more-view="settings">⚙ Settings</button>
+      <button class="button" data-more-view="sources">ⓘ Sources</button>
+      <button class="button" id="mobileSaveBtn">⇩ Backup</button>
+      <button class="button" id="installBtn" style="display:none">＋ Install App</button>
+      <button class="button" id="mobileCloseMore">Close</button>
+      <button class="button danger" id="mobileResetBtn">Reset Draft</button>
+    </div>
+    <div class="mobile-more-note" id="installNote">When hosted over HTTPS, this package can be added to your phone’s Home Screen and works offline after the first load. On iPhone: Safari → Share → Add to Home Screen.</div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="./players-1.js"></script>
+<script src="./players-2.js"></script>
+<script src="./players-3.js"></script>
+<script src="./players-4.js"></script>
+<script src="./app.js"></script>
+</body></html>
