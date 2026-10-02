@@ -4,6 +4,9 @@
 .project-summary { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .project-summary p { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 570px; margin: 0; }
 .project-summary .tag { padding: 6px 10px; }
+.project-skill-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
+.project-skill-links a { font-size: 11px; line-height: 1.5; padding: 8px 10px; background: #edf0e7; border: 1px solid #d2d8c8; border-radius: 4px; color: #46513c; }
+.project-skill-links a:hover { background: var(--accent); color: var(--ink); text-decoration: none; }
 .model-figure { margin: 0; }
 .model-stage { position: relative; background: #edf0e6; background-image: linear-gradient(#dce1d440 1px, transparent 1px), linear-gradient(90deg, #dce1d440 1px, transparent 1px); background-size: 40px 40px; }
 .model-label { position: absolute; z-index: 1; top: 22px; left: 24px; font: 10px/1.6 'Courier New', monospace; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); pointer-events: none; }

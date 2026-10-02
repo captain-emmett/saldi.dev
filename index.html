@@ -4,55 +4,180 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f8f2">
-  <meta name="description" content="Emmett Saldivar's project notebook: web tools, small hardware experiments, and things made out of curiosity.">
-  <title>Emmett Saldivar — Projects & experiments</title>
+  <meta name="description" content="Emmett Saldivar — computer and electrical engineering student. Explore hardware projects, experience, involvement, and education through the skills behind them.">
+  <title>Emmett Saldivar — Projects & experience</title>
   <link rel="canonical" href="https://saldi.dev/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23191c18'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial,sans-serif' font-size='39' font-weight='700' fill='%23d8fa72'%3Es%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="./portfolio.css">
+  <link rel="stylesheet" href="./resume.css">
   <script src="./portfolio.js" defer></script>
+  <script src="./resume.js" defer></script>
 </head>
-<body>
+<body class="resume-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
     <header class="site-header">
       <a class="brand" href="./" aria-label="Emmett Saldivar, home"><span class="monogram" aria-hidden="true">es.</span><span>Emmett Saldivar</span></a>
-      <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
+      <nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#involvement">Involvement</a><a href="#education">Education</a><a href="#skills">Skills</a></nav>
     </header>
     <main id="main">
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="eyebrow"><span>saldi.dev / a project notebook</span><span class="draft-label">First draft · 2026</span></div>
-        <h1 id="intro-title">Curiosity,<br><span>put to work.</span></h1>
-        <div class="hero-bottom"><p>I'm Emmett. I tinker with hardware, build interactive projects, and follow interesting ideas to see where they go.</p><a class="primary-link" href="#work">Explore the projects</a></div>
+      <section class="hero resume-intro" aria-labelledby="intro-title">
+        <div class="eyebrow"><span>Computer & electrical engineering</span><span class="intro-location">Lynden, Washington</span></div>
+        <h1 id="intro-title">Emmett <span>Saldivar.</span></h1>
+        <div class="hero-bottom"><p>Engineering student at Western Washington University. Building things that connect software to the physical world, from a one-button arcade to a handheld map of the stars.</p><div class="intro-links"><a class="primary-link" href="#work">Explore projects <span aria-hidden="true">↗</span></a><a class="text-link" href="mailto:emmettsaldi@gmail.com">Get in touch</a></div></div>
       </section>
-      <section class="work" id="work" aria-labelledby="work-title">
-        <div class="section-heading"><h2 id="work-title">Selected work</h2><span class="eyebrow">Hardware, experiments & play</span></div>
-        <article class="project featured">
-          <span class="project-number" aria-hidden="true">01</span>
-          <div class="project-main"><div class="project-heading"><h3>One-Button Arcade</h3><span class="tag">Hardware</span></div><p>One button, a tiny OLED, and a ten-second speed round. A pocket-sized arcade experiment with a lifetime press counter and high scores that survive a power cycle.</p><div class="project-meta">ESP32-S3 <span>/</span> Arduino <span>/</span> OLED</div></div>
-          <div class="project-links"><a href="./projects/one-button-arcade/">Explore project</a><span class="project-note">Interactive 3D preview</span></div>
-        </article>
-        <article class="project featured">
-          <span class="project-number" aria-hidden="true">02</span>
-          <div class="project-main"><div class="project-heading"><h3>Pi Constellation Mapper</h3><span class="tag">Early concept</span></div><p>A portable night-sky explorer and constellation sketchbook. Planning a Raspberry Pi device for finding familiar stars and drawing new connections between them.</p><div class="project-meta">Raspberry Pi 5 <span>/</span> Astronomy <span>/</span> In progress</div></div>
-          <div class="project-links"><a href="./projects/pi-constellation-mapper/">Explore project</a><span class="project-note">Interactive 3D preview</span></div>
-        </article>
-        <article class="project">
-          <span class="project-number" aria-hidden="true">03</span>
-          <div class="project-main"><div class="project-heading"><h3>Brass &amp; Barley</h3><span class="tag">Game project</span></div><p>A custom Minecraft modpack centered on mechanical building, farming, and brewing. Built with a curated mod list, compatibility fixes, and an in-game quest guide.</p><div class="project-meta">Minecraft <span>/</span> Create <span>/</span> PowerShell</div></div>
-          <div class="project-links"><span class="project-note">Personal build</span></div>
-        </article>
-        <article class="project side-project">
-          <span class="project-number" aria-hidden="true">04</span>
-          <div class="project-main"><div class="project-heading"><h3>Fantasy Draft Command Center</h3><span class="tag">Side project</span></div><p>A small web tool for keeping fantasy-football draft day organized.</p></div>
-          <div class="project-links"><a href="./fantasy-draft/">Open the app</a></div>
-        </article>
+      <section class="skills-panel" id="skills" aria-labelledby="skills-title">
+        <div class="skills-heading"><div><span class="eyebrow">Explore by skill</span><h2 id="skills-title" tabindex="-1">See where I've used it.</h2></div><p>Select a skill to connect the projects, jobs, and experiences behind it.</p></div>
+        <div id="skill-controls" hidden>
+          <details id="skill-list" open>
+            <summary>Browse all 20 skills <span aria-hidden="true">+</span></summary>
+            <div class="skill-group"><h3>People &amp; practice</h3><div class="skill-options" role="group" aria-label="People &amp; practice"><button type="button" class="skill-filter" data-filter="teamwork" aria-pressed="false">Working in a team<span class="skill-count" aria-hidden="true">3</span><span class="sr-only">, 3 entries</span></button><button type="button" class="skill-filter" data-filter="communication" aria-pressed="false">Communication<span class="skill-count" aria-hidden="true">3</span><span class="sr-only">, 3 entries</span></button><button type="button" class="skill-filter" data-filter="leadership" aria-pressed="false">Leadership<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="teaching" aria-pressed="false">Tutoring &amp; teaching<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="professional-learning" aria-pressed="false">Learning on the job<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button><button type="button" class="skill-filter" data-filter="problem-solving" aria-pressed="false">Problem solving<span class="skill-count" aria-hidden="true">3</span><span class="sr-only">, 3 entries</span></button><button type="button" class="skill-filter" data-filter="documentation" aria-pressed="false">Technical documentation<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button></div></div>
+<div class="skill-group"><h3>Code &amp; hardware</h3><div class="skill-options" role="group" aria-label="Code &amp; hardware"><button type="button" class="skill-filter" data-filter="web-dev" aria-pressed="false">Web development<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="javascript" aria-pressed="false">JavaScript<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="html-css" aria-pressed="false">HTML &amp; CSS<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="c-cpp" aria-pressed="false">C &amp; C++<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button><button type="button" class="skill-filter" data-filter="rust" aria-pressed="false">Rust<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="embedded" aria-pressed="false">Embedded systems<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button><button type="button" class="skill-filter" data-filter="electronics" aria-pressed="false">Electronics<span class="skill-count" aria-hidden="true">3</span><span class="sr-only">, 3 entries</span></button><button type="button" class="skill-filter" data-filter="prototyping" aria-pressed="false">Hardware prototyping<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button><button type="button" class="skill-filter" data-filter="3d-design" aria-pressed="false">3D modeling &amp; printing<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button><button type="button" class="skill-filter" data-filter="debugging" aria-pressed="false">Testing &amp; debugging<span class="skill-count" aria-hidden="true">4</span><span class="sr-only">, 4 entries</span></button><button type="button" class="skill-filter" data-filter="data-structures" aria-pressed="false">Data structures<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button><button type="button" class="skill-filter" data-filter="powershell" aria-pressed="false">PowerShell<span class="skill-count" aria-hidden="true">1</span><span class="sr-only">, 1 entry</span></button><button type="button" class="skill-filter" data-filter="engineering" aria-pressed="false">Engineering fundamentals<span class="skill-count" aria-hidden="true">2</span><span class="sr-only">, 2 entries</span></button></div></div>
+          </details>
+          <div class="filter-summary"><p id="filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 12 entries.</p><button class="show-all" type="button" data-filter="" aria-pressed="true">Show all</button></div>
+        </div>
+        <noscript><p class="no-script-note">Skills are listed on each entry below. Enable JavaScript to filter the résumé by skill.</p></noscript>
       </section>
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div><span class="eyebrow">A little context</span><h2 id="about-title">A workbench<br>for ideas.</h2></div>
-        <div class="about-copy"><p>This is a small collection of things I've been making: useful tools, playful experiments, and projects that give me a reason to learn something new.</p><p>The portfolio is still taking shape. For now, the projects do the talking.</p><a class="text-link" href="https://github.com/captain-emmett">Find me on GitHub</a></div>
+      <div id="resume-results">
+        <section class="resume-section" id="work" data-resume-section aria-labelledby="work-title">
+    <div class="section-heading"><h2 id="work-title">Projects <span class="section-count">5</span></h2><span class="eyebrow">Hardware first. Software throughout.</span></div>
+    <article id="arcade" class="resume-entry project featured" data-skills="embedded electronics prototyping 3d-design debugging">
+    <span class="project-number" aria-hidden="true">01</span>
+    <div class="project-main">
+      <div class="project-heading"><h3>One-Button Arcade</h3><span class="tag">Hardware</span></div>
+      <div class="entry-detail">2026 / ESP32-S3 · Arduino · OLED</div>
+      <p>A pocket-sized arcade with a lifetime press counter, a timed speed round, and saved high scores. One mechanical switch handles play and initials entry; a custom 3D-printed enclosure brings the display, board, and wiring together.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="embedded" href="?skill=embedded#skills">Embedded systems</a><a class="skill-tag" data-skill="electronics" href="?skill=electronics#skills">Electronics</a><a class="skill-tag" data-skill="prototyping" href="?skill=prototyping#skills">Hardware prototyping</a><a class="skill-tag" data-skill="3d-design" href="?skill=3d-design#skills">3D modeling &amp; printing</a><a class="skill-tag" data-skill="debugging" href="?skill=debugging#skills">Testing &amp; debugging</a></div>
+    </div>
+    <div class="project-links"><a href="./projects/one-button-arcade/">Explore project</a><span class="project-note">Interactive 3D preview</span></div>
+  </article>
+<article id="constellation" class="resume-entry project featured" data-skills="rust embedded electronics prototyping 3d-design debugging">
+    <span class="project-number" aria-hidden="true">02</span>
+    <div class="project-main">
+      <div class="project-heading"><h3>Pi Constellation Mapper</h3><span class="tag">In progress</span></div>
+      <div class="entry-detail">2026–present / Raspberry Pi 5 · Touch display · GPS</div>
+      <p>A handheld night-sky explorer and constellation sketchbook. The prototype pairs a Raspberry Pi, touch display, GPS, and orientation sensor with a Rust interface for exploring the sky and creating custom constellations. Enclosure prototypes focus on component fit and usability.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="rust" href="?skill=rust#skills">Rust</a><a class="skill-tag" data-skill="embedded" href="?skill=embedded#skills">Embedded systems</a><a class="skill-tag" data-skill="electronics" href="?skill=electronics#skills">Electronics</a><a class="skill-tag" data-skill="prototyping" href="?skill=prototyping#skills">Hardware prototyping</a><a class="skill-tag" data-skill="3d-design" href="?skill=3d-design#skills">3D modeling &amp; printing</a><a class="skill-tag" data-skill="debugging" href="?skill=debugging#skills">Testing &amp; debugging</a></div>
+    </div>
+    <div class="project-links"><a href="./projects/pi-constellation-mapper/">Explore project</a><span class="project-note">Interactive 3D preview</span></div>
+  </article>
+<article id="coursework" class="resume-entry project" data-skills="c-cpp data-structures debugging problem-solving">
+    <span class="project-number" aria-hidden="true">03</span>
+    <div class="project-main">
+      <div class="project-heading"><h3>C/C++ Programming</h3><span class="tag">Coursework</span></div>
+      <div class="entry-detail">2024–2025 / Command-line programs · Persistent storage</div>
+      <p>Programs built with linked data structures, classes, inheritance, iterators, and dynamic memory. Practiced modular C and object-oriented C++, using compiler warnings and test cases to work through pointers, input handling, and binary data.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="c-cpp" href="?skill=c-cpp#skills">C &amp; C++</a><a class="skill-tag" data-skill="data-structures" href="?skill=data-structures#skills">Data structures</a><a class="skill-tag" data-skill="debugging" href="?skill=debugging#skills">Testing &amp; debugging</a><a class="skill-tag" data-skill="problem-solving" href="?skill=problem-solving#skills">Problem solving</a></div>
+    </div>
+
+  </article>
+<article id="brass-barley" class="resume-entry project" data-skills="powershell debugging documentation">
+    <span class="project-number" aria-hidden="true">04</span>
+    <div class="project-main">
+      <div class="project-heading"><h3>Brass &amp; Barley</h3><span class="tag">Game project</span></div>
+      <div class="entry-detail">Minecraft · Create · Personal build</div>
+      <p>A custom Minecraft modpack centered on mechanical building, farming, and brewing. A curated mod list, compatibility fixes, and an in-game quest guide turn a collection of mods into a connected experience.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="powershell" href="?skill=powershell#skills">PowerShell</a><a class="skill-tag" data-skill="debugging" href="?skill=debugging#skills">Testing &amp; debugging</a><a class="skill-tag" data-skill="documentation" href="?skill=documentation#skills">Technical documentation</a></div>
+    </div>
+
+  </article>
+<article id="fantasy-draft" class="resume-entry project side-project" data-skills="web-dev javascript html-css">
+    <span class="project-number" aria-hidden="true">05</span>
+    <div class="project-main">
+      <div class="project-heading"><h3>Fantasy Draft Command Center</h3><span class="tag">Side project</span></div>
+
+      <p>A small browser app for keeping fantasy-football draft day organized, with saved draft state and offline support.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="web-dev" href="?skill=web-dev#skills">Web development</a><a class="skill-tag" data-skill="javascript" href="?skill=javascript#skills">JavaScript</a><a class="skill-tag" data-skill="html-css" href="?skill=html-css#skills">HTML &amp; CSS</a></div>
+    </div>
+    <div class="project-links"><a href="./fantasy-draft/">Open the app</a></div>
+  </article>
+  </section>
+<section class="resume-section" id="experience" data-resume-section aria-labelledby="experience-title">
+    <div class="section-heading"><h2 id="experience-title">Experience <span class="section-count">3</span></h2><span class="eyebrow">People, responsibility &amp; practice</span></div>
+    <article id="woods" class="resume-entry resume-row" data-skills="teamwork communication problem-solving professional-learning">
+    <div class="entry-date">June 2025–present</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>Woods Coffee</h3></div>
+      <div class="entry-detail">Barista · Lynden, WA</div>
+      <p>Provide friendly, accurate service during busy shifts. Work with coworkers to maintain quality, follow procedures, and resolve day-to-day problems while communicating clearly with customers and the team.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="teamwork" href="?skill=teamwork#skills">Working in a team</a><a class="skill-tag" data-skill="communication" href="?skill=communication#skills">Communication</a><a class="skill-tag" data-skill="problem-solving" href="?skill=problem-solving#skills">Problem solving</a><a class="skill-tag" data-skill="professional-learning" href="?skill=professional-learning#skills">Learning on the job</a></div>
+    </div>
+
+  </article>
+<article id="resident-assistant" class="resume-entry resume-row" data-skills="teamwork communication leadership problem-solving">
+    <div class="entry-date">Aug. 2024–June 2025</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>University of Hawaiʻi at Mānoa</h3></div>
+      <div class="entry-detail">Resident Assistant · Honolulu, HI</div>
+      <p>Planned and led community programs, explained policies to a diverse group of residents, and responded to resident concerns. Coordinated with the staff team in time-sensitive situations.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="teamwork" href="?skill=teamwork#skills">Working in a team</a><a class="skill-tag" data-skill="communication" href="?skill=communication#skills">Communication</a><a class="skill-tag" data-skill="leadership" href="?skill=leadership#skills">Leadership</a><a class="skill-tag" data-skill="problem-solving" href="?skill=problem-solving#skills">Problem solving</a></div>
+    </div>
+
+  </article>
+<article id="summer-apprenticeship" class="resume-entry resume-row" data-skills="professional-learning">
+    <div class="entry-date">Earlier experience</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>Summer Apprenticeship</h3></div>
+      <div class="entry-detail">Summer program</div>
+      <p>An earlier summer apprenticeship. Program details and the work I did there will be added soon.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="professional-learning" href="?skill=professional-learning#skills">Learning on the job</a></div>
+    </div>
+
+  </article>
+  </section>
+<section class="resume-section" id="involvement" data-resume-section aria-labelledby="involvement-title">
+    <div class="section-heading"><h2 id="involvement-title">Involvement <span class="section-count">2</span></h2><span class="eyebrow">Beyond the classroom</span></div>
+    <article id="wwu-racing" class="resume-entry resume-row" data-skills="teamwork electronics engineering">
+    <div class="entry-date">Current involvement</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>WWU Racing</h3></div>
+      <div class="entry-detail">Low-voltage &amp; electronics team</div>
+      <p>Part of the low-voltage and electronics team. WWU Racing is Western&#39;s student engineering team, building an electric race car for Formula SAE competition.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="teamwork" href="?skill=teamwork#skills">Working in a team</a><a class="skill-tag" data-skill="electronics" href="?skill=electronics#skills">Electronics</a><a class="skill-tag" data-skill="engineering" href="?skill=engineering#skills">Engineering fundamentals</a></div>
+    </div>
+    <div class="project-links"><a href="https://eece.wwu.edu/student-clubs">About the team at WWU</a></div>
+  </article>
+<article id="torch" class="resume-entry resume-row" data-skills="teaching communication">
+    <div class="entry-date">Student involvement</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>TORCH</h3></div>
+      <div class="entry-detail">Student tutor · Technology Outreach Hawaii</div>
+      <p>Served as a student tutor with Technology Outreach Hawaii, helping others learn through tutoring and clear communication.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="teaching" href="?skill=teaching#skills">Tutoring &amp; teaching</a><a class="skill-tag" data-skill="communication" href="?skill=communication#skills">Communication</a></div>
+    </div>
+
+  </article>
+  </section>
+<section class="resume-section" id="education" data-resume-section aria-labelledby="education-title">
+    <div class="section-heading"><h2 id="education-title">Education <span class="section-count">2</span></h2><span class="eyebrow">The foundation</span></div>
+    <article id="wwu" class="resume-entry resume-row" data-skills="engineering">
+    <div class="entry-date">Sep. 2025–expected May 2028</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>Western Washington University</h3></div>
+      <div class="entry-detail">B.S. Computer &amp; Electrical Engineering · Bellingham, WA</div>
+      <p>Transferred in Fall 2025 with junior standing. Pursuing a degree at the intersection of computing and electrical engineering.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="engineering" href="?skill=engineering#skills">Engineering fundamentals</a></div>
+    </div>
+
+  </article>
+<article id="hawaii" class="resume-entry resume-row" data-skills="c-cpp data-structures">
+    <div class="entry-date">Aug. 2023–June 2025</div>
+    <div class="project-main">
+      <div class="project-heading"><h3>University of Hawaiʻi at Mānoa</h3></div>
+      <div class="entry-detail">Undergraduate coursework · Honolulu, HI</div>
+      <p>Completed undergraduate coursework with a 3.7 cumulative GPA, including C/C++ programming, data structures, and memory management.</p>
+      <div class="entry-skills" aria-label="Skills used"><a class="skill-tag" data-skill="c-cpp" href="?skill=c-cpp#skills">C &amp; C++</a><a class="skill-tag" data-skill="data-structures" href="?skill=data-structures#skills">Data structures</a></div>
+    </div>
+
+  </article>
+  </section>
+      </div>
+      <section class="contact-section" id="about" aria-labelledby="contact-title">
+        <div><span class="eyebrow">Let's talk</span><h2 id="contact-title">Have a project in mind?</h2></div>
+        <div class="contact-links"><a href="mailto:emmettsaldi@gmail.com">Email me <span aria-hidden="true">↗</span></a><a href="https://github.com/captain-emmett">GitHub <span aria-hidden="true">↗</span></a><a href="https://linkedin.com/in/emmett">LinkedIn <span aria-hidden="true">↗</span></a></div>
       </section>
     </main>
-    <footer><span>© 2026 Emmett Saldivar</span><span>Always a work in progress.</span><a href="#main">Back to top</a></footer>
+    <footer><span>© 2026 Emmett Saldivar</span><span>Projects, practice, and everything in between.</span><a href="#main">Back to top</a></footer>
   </div>
 </body>
 </html>

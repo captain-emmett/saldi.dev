@@ -1,0 +1,100 @@
+{
+  "skills": {
+    "teamwork": { "label": "Working in a team", "group": "People & practice" },
+    "communication": { "label": "Communication", "group": "People & practice" },
+    "leadership": { "label": "Leadership", "group": "People & practice" },
+    "teaching": { "label": "Tutoring & teaching", "group": "People & practice" },
+    "professional-learning": { "label": "Learning on the job", "group": "People & practice" },
+    "problem-solving": { "label": "Problem solving", "group": "People & practice" },
+    "documentation": { "label": "Technical documentation", "group": "People & practice" },
+    "web-dev": { "label": "Web development", "group": "Code & hardware" },
+    "javascript": { "label": "JavaScript", "group": "Code & hardware" },
+    "html-css": { "label": "HTML & CSS", "group": "Code & hardware" },
+    "c-cpp": { "label": "C & C++", "group": "Code & hardware" },
+    "rust": { "label": "Rust", "group": "Code & hardware" },
+    "embedded": { "label": "Embedded systems", "group": "Code & hardware" },
+    "electronics": { "label": "Electronics", "group": "Code & hardware" },
+    "prototyping": { "label": "Hardware prototyping", "group": "Code & hardware" },
+    "3d-design": { "label": "3D modeling & printing", "group": "Code & hardware" },
+    "debugging": { "label": "Testing & debugging", "group": "Code & hardware" },
+    "data-structures": { "label": "Data structures", "group": "Code & hardware" },
+    "powershell": { "label": "PowerShell", "group": "Code & hardware" },
+    "engineering": { "label": "Engineering fundamentals", "group": "Code & hardware" }
+  },
+  "sections": [
+    { "id": "work", "title": "Projects", "caption": "Hardware first. Software throughout." },
+    { "id": "experience", "title": "Experience", "caption": "People, responsibility & practice" },
+    { "id": "involvement", "title": "Involvement", "caption": "Beyond the classroom" },
+    { "id": "education", "title": "Education", "caption": "The foundation" }
+  ],
+  "entries": [
+    {
+      "id": "arcade", "section": "work", "title": "One-Button Arcade", "label": "Hardware", "featured": true,
+      "period": "2026", "detail": "ESP32-S3 · Arduino · OLED",
+      "summary": "A pocket-sized arcade with a lifetime press counter, a timed speed round, and saved high scores. One mechanical switch handles play and initials entry; a custom 3D-printed enclosure brings the display, board, and wiring together.",
+      "skills": ["embedded", "electronics", "prototyping", "3d-design", "debugging"],
+      "href": "./projects/one-button-arcade/", "linkLabel": "Explore project", "linkNote": "Interactive 3D preview"
+    },
+    {
+      "id": "constellation", "section": "work", "title": "Pi Constellation Mapper", "label": "In progress", "featured": true,
+      "period": "2026–present", "detail": "Raspberry Pi 5 · Touch display · GPS",
+      "summary": "A handheld night-sky explorer and constellation sketchbook. The prototype pairs a Raspberry Pi, touch display, GPS, and orientation sensor with a Rust interface for exploring the sky and creating custom constellations. Enclosure prototypes focus on component fit and usability.",
+      "skills": ["rust", "embedded", "electronics", "prototyping", "3d-design", "debugging"],
+      "href": "./projects/pi-constellation-mapper/", "linkLabel": "Explore project", "linkNote": "Interactive 3D preview"
+    },
+    {
+      "id": "coursework", "section": "work", "title": "C/C++ Programming", "label": "Coursework",
+      "period": "2024–2025", "detail": "Command-line programs · Persistent storage",
+      "summary": "Programs built with linked data structures, classes, inheritance, iterators, and dynamic memory. Practiced modular C and object-oriented C++, using compiler warnings and test cases to work through pointers, input handling, and binary data.",
+      "skills": ["c-cpp", "data-structures", "debugging", "problem-solving"]
+    },
+    {
+      "id": "brass-barley", "section": "work", "title": "Brass & Barley", "label": "Game project",
+      "detail": "Minecraft · Create · Personal build",
+      "summary": "A custom Minecraft modpack centered on mechanical building, farming, and brewing. A curated mod list, compatibility fixes, and an in-game quest guide turn a collection of mods into a connected experience.",
+      "skills": ["powershell", "debugging", "documentation"]
+    },
+    {
+      "id": "fantasy-draft", "section": "work", "title": "Fantasy Draft Command Center", "label": "Side project", "compact": true,
+      "summary": "A small browser app for keeping fantasy-football draft day organized, with saved draft state and offline support.",
+      "skills": ["web-dev", "javascript", "html-css"],
+      "href": "./fantasy-draft/", "linkLabel": "Open the app"
+    },
+    {
+      "id": "woods", "section": "experience", "title": "Woods Coffee", "detail": "Barista · Lynden, WA", "period": "June 2025–present",
+      "summary": "Provide friendly, accurate service during busy shifts. Work with coworkers to maintain quality, follow procedures, and resolve day-to-day problems while communicating clearly with customers and the team.",
+      "skills": ["teamwork", "communication", "problem-solving", "professional-learning"]
+    },
+    {
+      "id": "resident-assistant", "section": "experience", "title": "University of Hawaiʻi at Mānoa", "detail": "Resident Assistant · Honolulu, HI", "period": "Aug. 2024–June 2025",
+      "summary": "Planned and led community programs, explained policies to a diverse group of residents, and responded to resident concerns. Coordinated with the staff team in time-sensitive situations.",
+      "skills": ["teamwork", "communication", "leadership", "problem-solving"]
+    },
+    {
+      "id": "summer-apprenticeship", "section": "experience", "title": "Summer Apprenticeship", "detail": "Summer program", "period": "Earlier experience",
+      "summary": "An earlier summer apprenticeship. Program details and the work I did there will be added soon.",
+      "skills": ["professional-learning"]
+    },
+    {
+      "id": "wwu-racing", "section": "involvement", "title": "WWU Racing", "detail": "Low-voltage & electronics team", "period": "Current involvement",
+      "summary": "Part of the low-voltage and electronics team. WWU Racing is Western's student engineering team, building an electric race car for Formula SAE competition.",
+      "skills": ["teamwork", "electronics", "engineering"],
+      "href": "https://eece.wwu.edu/student-clubs", "linkLabel": "About the team at WWU"
+    },
+    {
+      "id": "torch", "section": "involvement", "title": "TORCH", "detail": "Student tutor · Technology Outreach Hawaii",
+      "summary": "Served as a student tutor with Technology Outreach Hawaii, helping others learn through tutoring and clear communication.",
+      "skills": ["teaching", "communication"]
+    },
+    {
+      "id": "wwu", "section": "education", "title": "Western Washington University", "detail": "B.S. Computer & Electrical Engineering · Bellingham, WA", "period": "Sep. 2025–expected May 2028",
+      "summary": "Transferred in Fall 2025 with junior standing. Pursuing a degree at the intersection of computing and electrical engineering.",
+      "skills": ["engineering"]
+    },
+    {
+      "id": "hawaii", "section": "education", "title": "University of Hawaiʻi at Mānoa", "detail": "Undergraduate coursework · Honolulu, HI", "period": "Aug. 2023–June 2025",
+      "summary": "Completed undergraduate coursework with a 3.7 cumulative GPA, including C/C++ programming, data structures, and memory management.",
+      "skills": ["c-cpp", "data-structures"]
+    }
+  ]
+}

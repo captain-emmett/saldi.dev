@@ -1,19 +1,35 @@
 # saldi.dev
 
-A first-draft personal portfolio for Emmett Saldivar. Static HTML, CSS, and JavaScript; no build step. Project pages self-host a pinned model-viewer bundle for interactive 3D previews.
+A project-first, interactive résumé for Emmett Saldivar. Static HTML, CSS, and JavaScript, served directly by GitHub Pages. Project pages self-host a pinned model-viewer bundle for interactive 3D previews.
+
+## Résumé content and skills
+
+Edit `resume-data.json` to add or update projects, experience, involvement, education, and their skill tags. Each entry uses skill IDs from the `skills` dictionary. Add only skills supported by the activity. Then run:
+
+```sh
+node scripts/build-resume.cjs
+node scripts/build-resume.cjs --check
+```
+
+Commit the generated `index.html` alongside the data changes. The generator uses only built-in Node modules; GitHub Pages needs no build configuration or runtime dependencies. `scripts/resume-template.html` controls the homepage structure; `resume.css` contains its styles.
+
+`resume.js` filters all sections by one selected skill. Counts represent entries, not proficiency levels. Skill tags share the same filter, and `?skill=teamwork#skills` is a shareable view. Show all, browser Back/Forward, and section navigation restore the expected view. All résumé entries remain readable without JavaScript.
+
+Education, work dates, and updated hardware descriptions come from the supplied résumé. TORCH's student tutor role and WWU Racing's low-voltage/electronics role were supplied directly. The racing description links to WWU's official club listing. The earlier summer apprenticeship remains a short placeholder until program details are available; no dates or responsibilities have been assumed.
 
 ## Projects
 
 - Fantasy Draft Command Center — playable at `/fantasy-draft/`, copied from the existing public `captain-emmett/fantasy-draft-2026` project at commit `e20a0932233d3a2a0e9cef93d832d02f0acc5714`.
 - One-Button Arcade — `/projects/one-button-arcade/`, with an interactive 3D preview and source link.
-- Pi Constellation Mapper — `/projects/pi-constellation-mapper/`, with an interactive 3D preview; labeled as an early concept, matching its current README.
+- Pi Constellation Mapper — `/projects/pi-constellation-mapper/`, with an interactive 3D preview; an in-progress hardware prototype with a Rust interface.
+- C/C++ Programming — coursework in data structures, object-oriented programming, memory, and persistent storage.
 - Brass & Barley — a brief description of the personal Minecraft build. No private project files are included.
 
 ## Hosting
 
 GitHub Pages serves `main` from the repository root. The custom domain is `saldi.dev`.
 
-Edit `index.html` for content and `portfolio.css` for styling. Push to `main` to publish.
+Generate the homepage after changing résumé data. Edit project pages directly for their content; `portfolio.css` supplies shared base styles and `project.css` supplies project-page styles. Push to `main` to publish.
 
 ## Interactive project models
 

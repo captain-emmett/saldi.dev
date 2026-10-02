@@ -18,7 +18,7 @@
   <div class="page">
     <header class="site-header">
       <a class="brand" href="../../" aria-label="Emmett Saldivar, home"><span class="monogram" aria-hidden="true">es.</span><span>Emmett Saldivar</span></a>
-      <nav aria-label="Main navigation"><a href="../../#work">Work</a><a href="../../#about">About</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
+      <nav aria-label="Main navigation"><a href="../../#work">Projects</a><a href="../../#skills">Skills</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
     </header>
     <main id="main">
       <section class="project-intro" aria-labelledby="project-title">
@@ -26,6 +26,7 @@
         <div class="eyebrow">01 / hardware & play</div>
         <h1 id="project-title">One-Button<br>Arcade</h1>
         <div class="project-summary"><p>A little arcade built around a very simple question: how much can you do with one button?</p><span class="tag">ESP32-S3 / Arduino / OLED</span></div>
+        <div class="project-skill-links" aria-label="Explore these skills across my résumé"><a href="../../?skill=embedded#skills">Embedded systems</a><a href="../../?skill=electronics#skills">Electronics</a><a href="../../?skill=prototyping#skills">Hardware prototyping</a><a href="../../?skill=3d-design#skills">3D modeling &amp; printing</a><a href="../../?skill=debugging#skills">Testing &amp; debugging</a></div>
       </section>
       <section class="model-section" aria-labelledby="model-title">
         <div class="section-heading"><h2 id="model-title">A closer look</h2><span class="eyebrow">Interactive 3D</span></div>
@@ -42,7 +43,7 @@
       </section>
       <section class="project-details" aria-labelledby="idea-title">
         <div><span class="eyebrow">The idea</span><h2 id="idea-title">Small hardware.<br>A little competition.</h2></div>
-        <div class="project-copy"><p>An Adafruit QT Py ESP32-S3, a 128 × 64 OLED display, and a single pushbutton. Four quick presses start a ten-second speed round; the five fastest scores are saved even when the power is off.</p><p>The same button handles initials entry and high-score browsing. Outside a round, the display tracks the lifetime button-press count.</p><a class="text-link" href="https://github.com/captain-emmett/one-button-arcade">Code, wiring & build notes</a></div>
+        <div class="project-copy"><p>An Adafruit QT Py ESP32-S3, a 128 × 64 OLED display, and a mechanical key switch. Four quick presses start a ten-second speed round; the five fastest scores are saved even when the power is off.</p><p>The same button handles initials entry and high-score browsing through press timing and debouncing. Outside a round, the display tracks the lifetime button-press count.</p><p>I designed and 3D-printed a case around the display, switch, microcontroller, and wiring, then tested the assembled device. Startup diagnostics help identify display and wiring issues.</p><a class="text-link" href="https://github.com/captain-emmett/one-button-arcade">Code, wiring & build notes</a></div>
       </section>
       <nav class="project-pagination" aria-label="More projects"><a href="../../#work">All projects</a><a href="../pi-constellation-mapper/">Next: Pi Constellation Mapper</a></nav>
     </main>
