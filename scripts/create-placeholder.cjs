@@ -25,7 +25,7 @@ const gltf = {
   asset:{version:'2.0',generator:'saldi.dev placeholder cube'},
   scene:0, scenes:[{nodes:[0]}], nodes:[{mesh:0,name:'Placeholder cube'}],
   meshes:[{primitives:[{attributes:{POSITION:0,NORMAL:1},indices:2,material:0}]}],
-  materials:[{name:'Workbench lime',pbrMetallicRoughness:{baseColorFactor:[.68,.88,.20,1],metallicFactor:.05,roughnessFactor:.5}}],
+  materials:[{name:'Workbench clay',pbrMetallicRoughness:{baseColorFactor:[.56,.24,.13,1],metallicFactor:0,roughnessFactor:.75}}],
   accessors:[
     {bufferView:0,componentType:5126,count:24,type:'VEC3',min:[-.65,-.65,-.65],max:[.65,.65,.65]},
     {bufferView:1,componentType:5126,count:24,type:'VEC3'},
