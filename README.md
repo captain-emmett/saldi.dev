@@ -15,8 +15,6 @@ GitHub Pages serves `main` from the repository root. The custom domain is `saldi
 
 Edit `index.html` for content and `portfolio.css` for styling. Push to `main` to publish.
 
-The homepage uses an introduction column and two featured project sheets, followed by a smaller list of other work. Grids stay within the sketch/model display areas and the outer margin; writing sits on plain paper. The homepage SVGs are labeled conceptual diagrams, not photographs or finished hardware designs. Project pages share `project.css` and place project specifications beside the model viewer on desktop.
-
 ## Interactive project models
 
 Both project pages use a real GLB placeholder cube in `assets/models/placeholder-cube.glb`. The shared viewer supports mouse/touch rotation, scroll/pinch zoom, arrow-key rotation, and a reset button. It stays still until interacted with.
