@@ -27,6 +27,7 @@ Education, work dates, and updated hardware descriptions come from the supplied 
 - Fantasy Draft Command Center — overview at `/projects/fantasy-draft/`, playable at `/fantasy-draft/`, copied from the existing public `captain-emmett/fantasy-draft-2026` project at commit `e20a0932233d3a2a0e9cef93d832d02f0acc5714`.
 - One-Button Arcade — `/projects/one-button-arcade/`, with an interactive 3D preview, documented hardware list, and dated GitHub development log.
 - Pi Constellation Mapper — `/projects/pi-constellation-mapper/`, with an interactive 3D preview, hardware selections and open decisions, and GitHub development log.
+- ESP32-S3 MP3 Player — `/projects/esp32-mp3-player/`, with hardware specifications and a reconstructed debugging log leading to working playback in October 2025. Final wiring is unverified.
 - C/C++ Programming — `/projects/c-cpp-programming/`, covering coursework in data structures, object-oriented programming, memory, and persistent storage.
 - Brass & Barley — `/projects/brass-and-barley/`, covering the personal Minecraft build and its development notes. No private project files are included.
 

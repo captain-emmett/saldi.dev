@@ -45,6 +45,25 @@
       "href": "./projects/pi-constellation-mapper/", "linkLabel": "Project overview"
     },
     {
+      "id": "esp32-mp3-player",
+      "section": "work",
+      "title": "ESP32-S3 MP3 Player",
+      "label": "Working playback",
+      "period": "2025",
+      "detail": "ESP32-S3 · Arduino C++ · microSD · I²S",
+      "summary": "A microSD MP3 player with an external I²S DAC. I isolated storage and audio tests, investigated resets and buffer errors, and got playback working after a library update.",
+      "overview": "An embedded audio prototype, from failed playback tests to working music. Independent SD and DAC tests narrowed the investigation to streaming and decoding; updating ESP32-audioI2S preceded successful playback in October 2025.",
+      "skills": [
+        "embedded",
+        "electronics",
+        "c-cpp",
+        "prototyping",
+        "debugging"
+      ],
+      "href": "./projects/esp32-mp3-player/",
+      "linkLabel": "Project overview"
+    },
+    {
       "id": "coursework", "section": "work", "title": "C/C++ Programming", "label": "Coursework",
       "period": "2024–2025", "detail": "Command-line programs · Persistent storage",
       "summary": "Coursework in modular C and object-oriented C++, including linked data structures, memory management, and persistent storage.",
