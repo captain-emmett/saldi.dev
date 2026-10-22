@@ -17,6 +17,8 @@ The homepage reads Education → Experience → Involvement → Projects. An opt
 
 Every portfolio page uses Résumé, Projects, and Contact navigation. Résumé opens the homepage, Projects opens the notebook, and Contact opens the homepage's `#contact` section. Shared header layout and plain title typography live in `portfolio.css`, including the consistent mobile header below 620px.
 
+The selected Clean Technical design is applied by `theme.css`, loaded after the base and page-specific styles. It uses the same layout in light and dark modes. `theme.js` runs in the head before styles to apply the saved `saldi-color-theme` choice without a flash of the wrong theme. On the first visit it follows the system color preference; the header's Dark mode toggle saves an explicit choice across pages and visits. Other open tabs update with that choice. If storage is unavailable, the toggle still works for the current visit. Without JavaScript, CSS follows the system preference and the toggle stays hidden. Education uses the same padding and type scale as every other résumé entry.
+
 Education, work dates, and updated hardware descriptions come from the supplied résumé. TORCH's student tutor role and WWU Racing's low-voltage/electronics role were supplied directly. The racing description links to WWU's official club listing. The earlier summer apprenticeship remains a short placeholder until program details are available; no dates or responsibilities have been assumed.
 
 ## Projects
