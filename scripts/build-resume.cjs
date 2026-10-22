@@ -31,18 +31,25 @@ const entryHTML = (entry, index) => {
   </article>`;
 };
 const groups = [...new Set(Object.values(data.skills).map(skill => skill.group))];
-const skillHTML = groups.map(group => `<div class="skill-group"><h3>${escape(group)}</h3><div class="skill-options" role="group" aria-label="${escape(group)}">${Object.entries(data.skills).filter(([key, skill]) => skill.group === group && counts[key]).map(([key, skill]) => `<button type="button" class="skill-filter" data-filter="${escape(key)}" aria-pressed="false">${escape(skill.label)}<span class="skill-count" aria-hidden="true">${counts[key]}</span><span class="sr-only">, ${counts[key]} ${counts[key] === 1 ? 'entry' : 'entries'}</span></button>`).join('')}</div></div>`).join('\n');
+const featuredSkills = data.featuredSkills || [];
+if (new Set(featuredSkills).size !== featuredSkills.length || featuredSkills.some(key => !counts[key])) throw new Error('Featured skills must be unique skills used by an entry');
+const skillButton = key => `<button type="button" class="skill-filter" data-filter="${escape(key)}" aria-pressed="false">${escape(data.skills[key].label)}<span class="skill-count" aria-hidden="true">${counts[key]}</span><span class="sr-only">, ${counts[key]} ${counts[key] === 1 ? 'entry' : 'entries'}</span></button>`;
+const featuredSkillHTML = featuredSkills.map(skillButton).join('');
+const skillHTML = groups.map(group => {
+  const keys = Object.keys(data.skills).filter(key => data.skills[key].group === group && counts[key] && !featuredSkills.includes(key));
+  return keys.length ? `<div class="skill-group"><h3>${escape(group)}</h3><div class="skill-options" role="group" aria-label="${escape(group)}">${keys.map(skillButton).join('')}</div></div>` : '';
+}).join('\n');
 const sectionsHTML = data.sections.map(section => {
   const entries = data.entries.filter(entry => entry.section === section.id);
   if (!entries.length) return '';
   return `<section class="resume-section" id="${escape(section.id)}" data-resume-section aria-labelledby="${escape(section.id)}-title">
     <div class="section-heading"><h2 id="${escape(section.id)}-title">${escape(section.title)} <span class="section-count">${entries.length}</span></h2><span class="eyebrow">${escape(section.caption)}</span></div>
     ${entries.map(entryHTML).join('\n')}
-    ${section.id === 'work' ? '<a class="text-link project-notebook-link" href="./projects/">Browse the project notebook <span aria-hidden="true">↗</span></a>' : ''}
+    ${section.id === 'work' ? '<a class="text-link project-notebook-link" href="./projects/">Browse the project list <svg class="link-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>' : ''}
   </section>`;
 }).join('\n');
 const template = fs.readFileSync(path.join(__dirname, 'resume-template.html'), 'utf8');
-const output = template.replace('<!-- SKILL_FILTERS -->', skillHTML).replace('<!-- RESUME_SECTIONS -->', sectionsHTML).replaceAll('{{ENTRY_COUNT}}', String(data.entries.length)).replaceAll('{{SKILL_COUNT}}', String(Object.values(counts).filter(Boolean).length)).replace(/[\t ]+$/gm, '');
+const output = template.replace('<!-- FEATURED_SKILLS -->', featuredSkillHTML).replace('<!-- SKILL_FILTERS -->', skillHTML).replace('<!-- RESUME_SECTIONS -->', sectionsHTML).replaceAll('{{ENTRY_COUNT}}', String(data.entries.length)).replaceAll('{{MORE_SKILL_COUNT}}', String(Object.values(counts).filter(Boolean).length - featuredSkills.length)).replace(/[\t ]+$/gm, '');
 const projects = data.entries.filter(entry => entry.section === 'work');
 const projectHTML = projects.map((entry, index) => `<article class="notebook-project" id="${escape(entry.id)}">
   <span class="project-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
@@ -51,7 +58,7 @@ const projectHTML = projects.map((entry, index) => `<article class="notebook-pro
     ${entry.detail ? `<p class="notebook-tools">${escape(entry.detail)}</p>` : ''}
     <p>${escape(entry.overview || entry.summary)}</p>
   </div>
-  <div class="project-links"><a href="${escape(entry.href.replace('./projects/', './'))}">Read the overview <span aria-hidden="true">↗</span></a></div>
+  <div class="project-links"><a href="${escape(entry.href.replace('./projects/', './'))}">Read the overview <svg class="link-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
 </article>`).join('\n');
 const projectIndex = fs.readFileSync(path.join(__dirname, 'project-index-template.html'), 'utf8').replace('<!-- PROJECTS -->', projectHTML).replaceAll('{{PROJECT_COUNT}}', String(projects.length)).replace(/[\t ]+$/gm, '');
 const destinations = [[path.join(root, 'index.html'), output], [path.join(root, 'projects/index.html'), projectIndex]];

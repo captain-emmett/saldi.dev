@@ -1,8 +1,8 @@
 # saldi.dev
 
-An education-first résumé for Emmett Saldivar, a Computer & Electrical Engineering student seeking an internship. Static HTML, CSS, and JavaScript, served directly by GitHub Pages. A separate project notebook holds longer descriptions and development notes. Hardware project pages self-host a pinned model-viewer bundle for interactive 3D previews.
+An education-first resume for Emmett Saldivar, an Electrical and Computer Engineering student seeking an internship. Static HTML, CSS, and JavaScript, served directly by GitHub Pages. A separate project list holds longer descriptions and development notes. Hardware project pages self-host a pinned model-viewer bundle for interactive 3D previews.
 
-## Résumé content and skills
+## Resume content and skills
 
 Edit `resume-data.json` to add or update projects, experience, involvement, education, and their skill tags. Each entry uses skill IDs from the `skills` dictionary. Add only skills supported by the activity. Then run:
 
@@ -11,19 +11,19 @@ node scripts/build-resume.cjs
 node scripts/build-resume.cjs --check
 ```
 
-Commit the generated `index.html` and `projects/index.html` alongside the data changes. The generator uses only built-in Node modules; GitHub Pages needs no build configuration or runtime dependencies. `scripts/resume-template.html` controls the homepage structure; `resume.css` contains its styles. `scripts/project-index-template.html` and `project-index.css` control the project notebook. Entries use `summary` for the short résumé description and optional `overview` for the longer notebook description.
+Commit the generated `index.html` and `projects/index.html` alongside the data changes. The generator uses only built-in Node modules; GitHub Pages needs no build configuration or runtime dependencies. `scripts/resume-template.html` controls the homepage structure; `resume.css` contains its styles. `scripts/project-index-template.html` and `project-index.css` control the project list. Entries use `summary` for the short resume description and optional `overview` for the longer project description.
 
-The homepage reads Education → Experience → Involvement → Projects. An optional, initially collapsed skill browser follows the résumé. `resume.js` filters all sections by one selected skill. Counts represent entries, not proficiency levels. Skill tags share the same filter, and `?skill=teamwork#skills` is a shareable view. The filter's résumé link returns to the matching entries. Show all, browser Back/Forward, and section navigation restore the expected view. All résumé entries remain readable without JavaScript.
+The homepage reads Education → Experience → Involvement → Projects. The skill browser follows the resume, with five featured engineering and teamwork skills always visible and the remaining skills in a collapsed list. `featuredSkills` in `resume-data.json` controls these shortcuts. `resume.js` filters all sections by one selected skill. Counts represent entries, not proficiency levels. Skill tags share the same filter, and `?skill=teamwork#skills` is a shareable view. The filter's resume link returns to the matching entries. Show all, browser Back/Forward, and section navigation restore the expected view. All resume entries remain readable without JavaScript. Shared inline SVG arrows keep portfolio links consistent on desktop and mobile. The Project list link is centered beneath Contact me.
 
-Every portfolio page uses Résumé, Projects, and Contact navigation. Résumé opens the homepage, Projects opens the notebook, and Contact opens the homepage's `#contact` section. Shared header layout and plain title typography live in `portfolio.css`, including the consistent mobile header below 620px.
+Every portfolio page uses Resume, Projects, and Contact navigation. Resume opens the homepage, Projects opens the project list, and Contact opens the homepage's `#contact` section. Shared header layout and plain title typography live in `portfolio.css`, including the consistent mobile header below 620px.
 
-The selected Clean Technical design is applied by `theme.css`, loaded after the base and page-specific styles. It uses the same layout in light and dark modes. `theme.js` runs in the head before styles to apply the saved `saldi-color-theme` choice without a flash of the wrong theme. On the first visit it follows the system color preference; the header's Dark mode toggle saves an explicit choice across pages and visits. Other open tabs update with that choice. If storage is unavailable, the toggle still works for the current visit. Without JavaScript, CSS follows the system preference and the toggle stays hidden. Education uses the same padding and type scale as every other résumé entry.
+The selected Clean Technical design is applied by `theme.css`, loaded after the base and page-specific styles. It uses the same layout in light and dark modes. `theme.js` runs in the head before styles to apply the saved `saldi-color-theme` choice without a flash of the wrong theme. On the first visit it follows the system color preference; the header's Dark mode toggle saves an explicit choice across pages and visits. Other open tabs update with that choice. If storage is unavailable, the toggle still works for the current visit. Without JavaScript, CSS follows the system preference and the toggle stays hidden. Education uses the same padding and type scale as every other resume entry.
 
-Education, work dates, and updated hardware descriptions come from the supplied résumé. TORCH's student tutor role and WWU Racing's low-voltage/electronics role were supplied directly. The racing description links to WWU's official club listing. The earlier summer apprenticeship remains a short placeholder until program details are available; no dates or responsibilities have been assumed.
+Education, work dates, and updated hardware descriptions come from the supplied resume. TORCH's student tutor role and WWU Racing's low-voltage/electronics role were supplied directly. The racing description links to WWU's official club listing. The earlier summer apprenticeship remains a short placeholder until program details are available; no dates or responsibilities have been assumed.
 
 ## Projects
 
-- `/projects/` — the full project notebook, linking to a separate overview for each project.
+- `/projects/` — the full project list, linking to a separate overview for each project.
 - Fantasy Draft Command Center — overview at `/projects/fantasy-draft/`, playable at `/fantasy-draft/`, copied from the existing public `captain-emmett/fantasy-draft-2026` project at commit `e20a0932233d3a2a0e9cef93d832d02f0acc5714`.
 - One-Button Arcade — `/projects/one-button-arcade/`, with an interactive 3D preview, documented hardware list, and dated GitHub development log.
 - Pi Constellation Mapper — `/projects/pi-constellation-mapper/`, with an interactive 3D preview, hardware selections and open decisions, and GitHub development log.
@@ -37,7 +37,7 @@ Hardware lists distinguish confirmed selections from unrecorded specifications a
 
 GitHub Pages serves `main` from the repository root. The custom domain is `saldi.dev`.
 
-Generate the homepage and project index after changing résumé data. Edit individual project pages directly for their content; `portfolio.css` supplies shared base styles and `project.css` supplies project-page styles. Push to `main` to publish.
+Generate the homepage and project index after changing resume data. Edit individual project pages directly for their content; `portfolio.css` supplies shared base styles and `project.css` supplies project-page styles. Push to `main` to publish.
 
 ## Interactive project models
 

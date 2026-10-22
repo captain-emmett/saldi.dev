@@ -8,8 +8,12 @@
   const status = document.querySelector('#filter-status');
   const panel = document.querySelector('#skills');
   const skillList = document.querySelector('#skill-list');
-  const mobile = matchMedia('(max-width: 760px)');
   let active = '';
+
+  function revealActiveFilter() {
+    const button = filters.get(active);
+    if (button && skillList.contains(button)) skillList.open = true;
+  }
 
   function applyFilter(key, { push = false, focus = false } = {}) {
     active = filters.has(key) ? key : '';
@@ -35,7 +39,7 @@
       if (url.href !== location.href) history.pushState(null, '', url);
     }
     if (focus) {
-      skillList.open = true;
+      revealActiveFilter();
       (filters.get(active) || buttons.find(button => !button.dataset.filter)).focus({ preventScroll: true });
       panel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
     }
@@ -70,10 +74,9 @@
   });
   window.addEventListener('popstate', () => {
     applyFilter(new URLSearchParams(location.search).get('skill'));
-    if (active) skillList.open = true;
+    revealActiveFilter();
   });
-  mobile.addEventListener('change', () => { if (active) skillList.open = true; });
   controls.hidden = false;
   applyFilter(new URLSearchParams(location.search).get('skill'));
-  skillList.open = Boolean(active);
+  revealActiveFilter();
 })();

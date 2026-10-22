@@ -4,13 +4,15 @@ button { font: inherit; }
 button:focus-visible, .skill-tag:focus-visible { outline: 3px solid #526e10; outline-offset: 3px; }
 .resume-intro { padding: 28px 0 32px; }
 .resume-intro .hero-bottom p { max-width: 735px; font-size: 16px; }
-.intro-links { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex-shrink: 0; }
-.intro-links .primary-link { display: flex; gap: 28px; }
-.intro-links .text-link { margin-top: 4px; }
+.intro-links { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }
+.intro-links .primary-link { display: flex; align-items: center; justify-content: center; }
+.intro-links .text-link { margin-top: 0; padding: 12px 4px; }
 .skills-panel { padding: 27px 30px 0; background: #ecefe5; border: 1px solid var(--line); margin-bottom: 38px; }
 .skills-heading { display: flex; justify-content: space-between; gap: 32px; margin-bottom: 24px; }
 .skills-heading h2 { font-size: 25px; margin-top: 7px; }
 .skills-heading p { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 6px 0 0; max-width: 300px; }
+.featured-skills { margin-bottom: 20px; }
+.featured-skills-label { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
 #skill-list > summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 13px 0; min-height: 44px; font-size: 13px; border-top: 1px solid var(--line); list-style: none; }
 #skill-list > summary::-webkit-details-marker { display: none; }
 #skill-list > summary:focus-visible { outline: 3px solid #526e10; outline-offset: 3px; }
@@ -59,8 +61,6 @@ button:focus-visible, .skill-tag:focus-visible { outline: 3px solid #526e10; out
 @media(max-width:760px) {
   .resume-intro { padding: 24px 0 26px; }
   .resume-intro .hero-bottom p { font-size: 16px; }
-  .intro-links { flex-direction: row; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .intro-links .primary-link { gap: 12px; }
   .skills-panel { padding: 22px 18px 0; margin-bottom: 22px; }
   .skills-heading { flex-direction: column; gap: 4px; margin-bottom: 20px; }
   .skills-heading h2 { font-size: 23px; }

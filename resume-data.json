@@ -21,6 +21,7 @@
     "powershell": { "label": "PowerShell", "group": "Code & hardware" },
     "engineering": { "label": "Engineering fundamentals", "group": "Code & hardware" }
   },
+  "featuredSkills": ["embedded", "electronics", "c-cpp", "debugging", "teamwork"],
   "sections": [
     { "id": "education", "title": "Education", "caption": "Degree in progress" },
     { "id": "experience", "title": "Experience", "caption": "People, responsibility & practice" },
@@ -113,8 +114,8 @@
       "skills": ["teaching", "communication"]
     },
     {
-      "id": "wwu", "section": "education", "title": "Western Washington University", "detail": "B.S. Computer & Electrical Engineering · Bellingham, WA", "period": "Sep. 2025–expected May 2028",
-      "summary": "Pursuing a B.S. in Computer & Electrical Engineering (EECE), with expected graduation in May 2028. Transferred in Fall 2025 with junior standing.",
+      "id": "wwu", "section": "education", "title": "Western Washington University", "detail": "B.S. Electrical and Computer Engineering · Bellingham, WA", "period": "Sep. 2025–expected May 2028",
+      "summary": "Pursuing a B.S. in Electrical and Computer Engineering, with expected graduation in May 2028. Transferred in Fall 2025 with junior standing.",
       "skills": ["engineering"]
     },
     {
