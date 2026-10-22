@@ -1,5 +1,4 @@
-.notebook-intro { padding: 38px 0 46px; }
-.notebook-intro h1 { font-size: clamp(47px, 7vw, 84px); letter-spacing: -4px; margin: 26px 0; }
+.notebook-intro { padding: 32px 0 45px; }
 .notebook-intro .hero-bottom p { max-width: 700px; }
 .notebook-project { display: grid; grid-template-columns: 40px minmax(0, 1fr) 150px; gap: 25px; padding: 34px 0; border-bottom: 1px solid var(--line); }
 .notebook-project:last-child { margin-bottom: 50px; }
@@ -8,8 +7,6 @@
 .notebook-project .project-links { align-items: flex-end; }
 @media(max-width:760px) {
   .notebook-intro { padding: 28px 0 34px; }
-  .notebook-intro h1 { font-size: clamp(43px, 10vw, 66px); letter-spacing: -2.5px; }
-  .notebook-intro h1 span { display: table; }
   .notebook-project { grid-template-columns: 20px minmax(0, 1fr); gap: 12px 15px; padding: 27px 0; }
   .notebook-project .project-links { align-items: flex-start; }
   .notebook-project:last-child { margin-bottom: 35px; }

@@ -15,6 +15,8 @@ Commit the generated `index.html` and `projects/index.html` alongside the data c
 
 The homepage reads Education → Experience → Involvement → Projects. An optional, initially collapsed skill browser follows the résumé. `resume.js` filters all sections by one selected skill. Counts represent entries, not proficiency levels. Skill tags share the same filter, and `?skill=teamwork#skills` is a shareable view. The filter's résumé link returns to the matching entries. Show all, browser Back/Forward, and section navigation restore the expected view. All résumé entries remain readable without JavaScript.
 
+Every portfolio page uses Résumé, Projects, and Contact navigation. Résumé opens the homepage, Projects opens the notebook, and Contact opens the homepage's `#contact` section. Shared header layout and plain title typography live in `portfolio.css`, including the consistent mobile header below 620px.
+
 Education, work dates, and updated hardware descriptions come from the supplied résumé. TORCH's student tutor role and WWU Racing's low-voltage/electronics role were supplied directly. The racing description links to WWU's official club listing. The earlier summer apprenticeship remains a short placeholder until program details are available; no dates or responsibilities have been assumed.
 
 ## Projects
@@ -26,7 +28,7 @@ Education, work dates, and updated hardware descriptions come from the supplied 
 - C/C++ Programming — `/projects/c-cpp-programming/`, covering coursework in data structures, object-oriented programming, memory, and persistent storage.
 - Brass & Barley — `/projects/brass-and-barley/`, covering the personal Minecraft build and its development notes. No private project files are included.
 
-Hardware lists distinguish confirmed selections from unrecorded specifications and open decisions. Development logs link to actual repository commits or prototype work. No build photos were present in the supplied sources; add real photos with descriptive alt text and captions to the relevant log entries when available. Do not substitute generated images or placeholder models for build evidence. The incorrect LinkedIn link has been removed pending the correct profile URL.
+Hardware lists distinguish confirmed selections from unrecorded specifications and open decisions. Development logs link to actual repository commits or prototype work. No build photos were present in the supplied sources; add real photos with descriptive alt text and captions to the relevant log entries when available. Do not substitute generated images or placeholder models for build evidence. Contact links include the supplied LinkedIn profile without share-tracking parameters.
 
 ## Hosting
 
