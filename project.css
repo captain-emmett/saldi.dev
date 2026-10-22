@@ -27,6 +27,14 @@ model-viewer:focus-visible { outline: 3px solid #526e10; outline-offset: -4px; }
 .project-pagination { border-top: 1px solid var(--line); padding: 24px 0; font-size: 13px; justify-content: space-between; }
 .project-jump-links { flex-wrap: wrap; gap: 8px 28px; margin-top: 27px; font-size: 13px; }
 .project-jump-links a { border-bottom: 1px solid #9da98c; padding: 8px 0; }
+.project-interface { padding-bottom: 42px; scroll-margin-top: 28px; }
+.interface-figure { margin: 24px 0 0; }
+.interface-image-link { display: block; }
+.interface-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.interface-figure figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.interface-figure figcaption p { flex: 1 1 380px; margin: 0; }
+.interface-figure figcaption a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.interface-link-note { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .project-overview { border-top: 1px solid var(--line); }
 .project-documentation { padding-top: 60px; scroll-margin-top: 28px; }
 .documentation-intro { max-width: 720px; color: var(--muted); font-size: 14px; line-height: 1.75; margin: 21px 0 26px; }
