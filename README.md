@@ -1,6 +1,6 @@
 # saldi.dev
 
-A project-first, interactive résumé for Emmett Saldivar. Static HTML, CSS, and JavaScript, served directly by GitHub Pages. Project pages self-host a pinned model-viewer bundle for interactive 3D previews.
+An education-first résumé for Emmett Saldivar, a Computer & Electrical Engineering student seeking an internship. Static HTML, CSS, and JavaScript, served directly by GitHub Pages. A separate project notebook holds longer descriptions and development notes. Hardware project pages self-host a pinned model-viewer bundle for interactive 3D previews.
 
 ## Résumé content and skills
 
@@ -11,25 +11,28 @@ node scripts/build-resume.cjs
 node scripts/build-resume.cjs --check
 ```
 
-Commit the generated `index.html` alongside the data changes. The generator uses only built-in Node modules; GitHub Pages needs no build configuration or runtime dependencies. `scripts/resume-template.html` controls the homepage structure; `resume.css` contains its styles.
+Commit the generated `index.html` and `projects/index.html` alongside the data changes. The generator uses only built-in Node modules; GitHub Pages needs no build configuration or runtime dependencies. `scripts/resume-template.html` controls the homepage structure; `resume.css` contains its styles. `scripts/project-index-template.html` and `project-index.css` control the project notebook. Entries use `summary` for the short résumé description and optional `overview` for the longer notebook description.
 
-`resume.js` filters all sections by one selected skill. Counts represent entries, not proficiency levels. Skill tags share the same filter, and `?skill=teamwork#skills` is a shareable view. Show all, browser Back/Forward, and section navigation restore the expected view. All résumé entries remain readable without JavaScript.
+The homepage reads Education → Experience → Involvement → Projects. An optional, initially collapsed skill browser follows the résumé. `resume.js` filters all sections by one selected skill. Counts represent entries, not proficiency levels. Skill tags share the same filter, and `?skill=teamwork#skills` is a shareable view. The filter's résumé link returns to the matching entries. Show all, browser Back/Forward, and section navigation restore the expected view. All résumé entries remain readable without JavaScript.
 
 Education, work dates, and updated hardware descriptions come from the supplied résumé. TORCH's student tutor role and WWU Racing's low-voltage/electronics role were supplied directly. The racing description links to WWU's official club listing. The earlier summer apprenticeship remains a short placeholder until program details are available; no dates or responsibilities have been assumed.
 
 ## Projects
 
-- Fantasy Draft Command Center — playable at `/fantasy-draft/`, copied from the existing public `captain-emmett/fantasy-draft-2026` project at commit `e20a0932233d3a2a0e9cef93d832d02f0acc5714`.
-- One-Button Arcade — `/projects/one-button-arcade/`, with an interactive 3D preview and source link.
-- Pi Constellation Mapper — `/projects/pi-constellation-mapper/`, with an interactive 3D preview; an in-progress hardware prototype with a Rust interface.
-- C/C++ Programming — coursework in data structures, object-oriented programming, memory, and persistent storage.
-- Brass & Barley — a brief description of the personal Minecraft build. No private project files are included.
+- `/projects/` — the full project notebook, linking to a separate overview for each project.
+- Fantasy Draft Command Center — overview at `/projects/fantasy-draft/`, playable at `/fantasy-draft/`, copied from the existing public `captain-emmett/fantasy-draft-2026` project at commit `e20a0932233d3a2a0e9cef93d832d02f0acc5714`.
+- One-Button Arcade — `/projects/one-button-arcade/`, with an interactive 3D preview, documented hardware list, and dated GitHub development log.
+- Pi Constellation Mapper — `/projects/pi-constellation-mapper/`, with an interactive 3D preview, hardware selections and open decisions, and GitHub development log.
+- C/C++ Programming — `/projects/c-cpp-programming/`, covering coursework in data structures, object-oriented programming, memory, and persistent storage.
+- Brass & Barley — `/projects/brass-and-barley/`, covering the personal Minecraft build and its development notes. No private project files are included.
+
+Hardware lists distinguish confirmed selections from unrecorded specifications and open decisions. Development logs link to actual repository commits or prototype work. No build photos were present in the supplied sources; add real photos with descriptive alt text and captions to the relevant log entries when available. Do not substitute generated images or placeholder models for build evidence. The incorrect LinkedIn link has been removed pending the correct profile URL.
 
 ## Hosting
 
 GitHub Pages serves `main` from the repository root. The custom domain is `saldi.dev`.
 
-Generate the homepage after changing résumé data. Edit project pages directly for their content; `portfolio.css` supplies shared base styles and `project.css` supplies project-page styles. Push to `main` to publish.
+Generate the homepage and project index after changing résumé data. Edit individual project pages directly for their content; `portfolio.css` supplies shared base styles and `project.css` supplies project-page styles. Push to `main` to publish.
 
 ## Interactive project models
 

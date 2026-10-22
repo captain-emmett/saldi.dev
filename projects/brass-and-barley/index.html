@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f2">
+  <meta name="description" content="Brass and Barley, Emmett Saldivar's personal Minecraft modpack: mechanical building, farming, brewing, compatibility work, and an in-game quest guide.">
+  <title>Brass &amp; Barley — Emmett Saldivar</title>
+  <link rel="canonical" href="https://saldi.dev/projects/brass-and-barley/">
+  <link rel="stylesheet" href="../../portfolio.css">
+  <link rel="stylesheet" href="../../project.css">
+  <script src="../../portfolio.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Emmett Saldivar, home"><span class="monogram" aria-hidden="true">es.</span><span>Emmett Saldivar</span></a>
+      <nav aria-label="Main navigation"><a href="../../">Résumé</a><a href="../">Projects</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
+    </header>
+    <main id="main">
+      <section class="project-intro" aria-labelledby="project-title">
+        <a class="back-link" href="../">All projects</a>
+        <div class="eyebrow">Personal game project</div>
+        <h1 id="project-title">Brass<br>&amp; Barley</h1>
+        <div class="project-summary"><p>A Minecraft modpack connecting mechanical workshops, farms, kitchens, and a little exploration.</p><span class="tag">Minecraft / Create / PowerShell</span></div>
+        <div class="project-skill-links" aria-label="Explore these skills across my résumé"><a href="../../?skill=powershell#skills">PowerShell</a><a href="../../?skill=debugging#skills">Testing &amp; debugging</a><a href="../../?skill=documentation#skills">Technical documentation</a></div>
+      </section>
+      <section class="project-details" aria-labelledby="idea-title">
+        <div><span class="eyebrow">The idea</span><h2 id="idea-title">Make the pieces<br>feel connected.</h2></div>
+        <div class="project-copy"><p>Brass &amp; Barley is a personal Minecraft build centered on Create machinery, farming, animal care, and brewing. A workshop can support a farm, the farm can supply a kitchen, and those systems can grow into a larger home.</p><p>The work is in choosing compatible mods, adjusting their settings, and explaining how they fit together. An in-game guide offers suggestions while leaving every chapter available from the start.</p></div>
+      </section>
+      <section class="project-details" aria-labelledby="scope-title">
+        <div><span class="eyebrow">Technical scope</span><h2 id="scope-title">Configuration<br>and compatibility.</h2></div>
+        <div class="project-copy"><p><strong>Pack foundation:</strong> Minecraft 1.21.1, NeoForge, and a curated mod set around Create, Farmer's Delight, seasons, husbandry, and brewing.</p><p><strong>Build tooling:</strong> PowerShell scripts assemble the pack, generate the FTB quest guide from JSON, and regenerate a data-only compatibility patch.</p><p><strong>Player guide:</strong> seven chapters and 34 short entries, with optional checkmarks and item tasks that do not consume the item. Stable IDs let text changes preserve quest completion.</p><p><strong>Maintenance:</strong> pinned dependencies, documented configuration choices, recoverable backups, startup checks, and a list of remaining gameplay tests.</p></div>
+      </section>
+      <section class="project-details" aria-labelledby="hardware-title">
+        <div><span class="eyebrow">Hardware &amp; runtime</span><h2 id="hardware-title">A computer,<br>not a custom device.</h2></div>
+        <div class="project-copy"><p>Runs on a computer with Minecraft, the Prism Launcher, and Java 21. The local instance is configured with a 4 GB minimum and 8 GB maximum Java heap; these are instance settings rather than measured minimum system requirements.</p><p>This is a software configuration project with no dedicated electronics or custom hardware build.</p></div>
+      </section>
+      <section class="project-documentation dev-log-section" aria-labelledby="log-title">
+        <div class="section-heading"><h2 id="log-title">Development notes</h2><span class="eyebrow">Guide / compatibility / testing</span></div>
+        <div class="dev-log">
+        <article class="dev-entry"><div class="dev-entry-meta"><span>Development note</span></div><div class="dev-entry-body"><h3>Moving the guide into FTB Quests</h3><p>The guide moved from a page-based ledger to short, scrollable FTB Quests notes. Chapters cover settling in, Create machinery, food and seasons, husbandry, home and field gear, airships, and exploration conveniences. There are no reward items or progression gates.</p></div></article>
+        <article class="dev-entry"><div class="dev-entry-meta"><span>Development note</span></div><div class="dev-entry-body"><h3>Keeping compatibility fixes reproducible</h3><p>A data-only patch adds item-existence conditions to optional Create Connected loot entries and replaces an invalid Copycats physics selector with an optional block tag. A PowerShell script regenerates the patch while leaving the original mod archives intact.</p></div></article>
+        <article class="dev-entry"><div class="dev-entry-meta"><span>Development note</span></div><div class="dev-entry-body"><h3>Separating startup checks from gameplay checks</h3><p>Documented validation reached the title screen and checked video settings, including a successful Photon shader compilation. In-world checks for Create and Aeronautics rendering, airship cargo, distant terrain, and save/reload behavior remain part of the test plan.</p><p>The reusable pack template keeps shaders disabled pending those in-world checks.</p></div></article>
+        </div>
+      </section>
+      <nav class="project-pagination" aria-label="More projects"><a href="../">All projects</a><a href="../fantasy-draft/">Next: Fantasy Draft Command Center</a></nav>
+    </main>
+    <footer><span>© 2026 Emmett Saldivar</span><a href="../../">Back to résumé</a><a href="#main">Back to top</a></footer>
+  </div>
+</body>
+</html>

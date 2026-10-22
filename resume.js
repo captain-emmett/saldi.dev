@@ -72,8 +72,8 @@
     applyFilter(new URLSearchParams(location.search).get('skill'));
     if (active) skillList.open = true;
   });
-  mobile.addEventListener('change', () => { skillList.open = !mobile.matches || Boolean(active); });
+  mobile.addEventListener('change', () => { if (active) skillList.open = true; });
   controls.hidden = false;
   applyFilter(new URLSearchParams(location.search).get('skill'));
-  skillList.open = !mobile.matches || Boolean(active);
+  skillList.open = Boolean(active);
 })();

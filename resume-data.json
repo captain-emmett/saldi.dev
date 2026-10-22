@@ -22,43 +22,50 @@
     "engineering": { "label": "Engineering fundamentals", "group": "Code & hardware" }
   },
   "sections": [
-    { "id": "work", "title": "Projects", "caption": "Hardware first. Software throughout." },
+    { "id": "education", "title": "Education", "caption": "Degree in progress" },
     { "id": "experience", "title": "Experience", "caption": "People, responsibility & practice" },
     { "id": "involvement", "title": "Involvement", "caption": "Beyond the classroom" },
-    { "id": "education", "title": "Education", "caption": "The foundation" }
+    { "id": "work", "title": "Projects", "caption": "Selected work" }
   ],
   "entries": [
     {
       "id": "arcade", "section": "work", "title": "One-Button Arcade", "label": "Hardware", "featured": true,
       "period": "2026", "detail": "ESP32-S3 · Arduino · OLED",
-      "summary": "A pocket-sized arcade with a lifetime press counter, a timed speed round, and saved high scores. One mechanical switch handles play and initials entry; a custom 3D-printed enclosure brings the display, board, and wiring together.",
+      "summary": "An ESP32-S3 arcade with one mechanical switch, an OLED display, saved scores, and a custom 3D-printed enclosure.",
+      "overview": "A pocket-sized arcade with a lifetime press counter, a timed speed round, and saved high scores. One mechanical switch handles play and initials entry; a custom 3D-printed enclosure brings the display, board, and wiring together.",
       "skills": ["embedded", "electronics", "prototyping", "3d-design", "debugging"],
-      "href": "./projects/one-button-arcade/", "linkLabel": "Explore project", "linkNote": "Interactive 3D preview"
+      "href": "./projects/one-button-arcade/", "linkLabel": "Project overview"
     },
     {
       "id": "constellation", "section": "work", "title": "Pi Constellation Mapper", "label": "In progress", "featured": true,
       "period": "2026–present", "detail": "Raspberry Pi 5 · Touch display · GPS",
-      "summary": "A handheld night-sky explorer and constellation sketchbook. The prototype pairs a Raspberry Pi, touch display, GPS, and orientation sensor with a Rust interface for exploring the sky and creating custom constellations. Enclosure prototypes focus on component fit and usability.",
+      "summary": "A handheld sky-map prototype combining a Raspberry Pi, touch display, GPS, orientation sensor, and Rust interface.",
+      "overview": "A handheld night-sky explorer and constellation sketchbook. The prototype pairs a Raspberry Pi, touch display, GPS, and orientation sensor with a Rust interface for exploring the sky and creating custom constellations. Enclosure prototypes focus on component fit and usability.",
       "skills": ["rust", "embedded", "electronics", "prototyping", "3d-design", "debugging"],
-      "href": "./projects/pi-constellation-mapper/", "linkLabel": "Explore project", "linkNote": "Interactive 3D preview"
+      "href": "./projects/pi-constellation-mapper/", "linkLabel": "Project overview"
     },
     {
       "id": "coursework", "section": "work", "title": "C/C++ Programming", "label": "Coursework",
       "period": "2024–2025", "detail": "Command-line programs · Persistent storage",
-      "summary": "Programs built with linked data structures, classes, inheritance, iterators, and dynamic memory. Practiced modular C and object-oriented C++, using compiler warnings and test cases to work through pointers, input handling, and binary data.",
-      "skills": ["c-cpp", "data-structures", "debugging", "problem-solving"]
+      "summary": "Coursework in modular C and object-oriented C++, including linked data structures, memory management, and persistent storage.",
+      "overview": "Programs built with linked data structures, classes, inheritance, iterators, and dynamic memory. Practiced modular C and object-oriented C++, using compiler warnings and test cases to work through pointers, input handling, and binary data.",
+      "skills": ["c-cpp", "data-structures", "debugging", "problem-solving"],
+      "href": "./projects/c-cpp-programming/", "linkLabel": "Project overview"
     },
     {
       "id": "brass-barley", "section": "work", "title": "Brass & Barley", "label": "Game project",
       "detail": "Minecraft · Create · Personal build",
-      "summary": "A custom Minecraft modpack centered on mechanical building, farming, and brewing. A curated mod list, compatibility fixes, and an in-game quest guide turn a collection of mods into a connected experience.",
-      "skills": ["powershell", "debugging", "documentation"]
+      "summary": "A custom Minecraft modpack with mechanical building, farming, brewing, compatibility fixes, and an in-game quest guide.",
+      "overview": "A custom Minecraft modpack centered on mechanical building, farming, and brewing. A curated mod list, compatibility fixes, and an in-game quest guide turn a collection of mods into a connected experience.",
+      "skills": ["powershell", "debugging", "documentation"],
+      "href": "./projects/brass-and-barley/", "linkLabel": "Project overview"
     },
     {
       "id": "fantasy-draft", "section": "work", "title": "Fantasy Draft Command Center", "label": "Side project", "compact": true,
-      "summary": "A small browser app for keeping fantasy-football draft day organized, with saved draft state and offline support.",
+      "summary": "A browser-based fantasy-football draft board with saved draft state and offline support.",
+      "overview": "A small browser app for keeping fantasy-football draft day organized, with player rankings, saved draft state, JSON import and export, and offline support.",
       "skills": ["web-dev", "javascript", "html-css"],
-      "href": "./fantasy-draft/", "linkLabel": "Open the app"
+      "href": "./projects/fantasy-draft/", "linkLabel": "Project overview"
     },
     {
       "id": "woods", "section": "experience", "title": "Woods Coffee", "detail": "Barista · Lynden, WA", "period": "June 2025–present",
@@ -88,7 +95,7 @@
     },
     {
       "id": "wwu", "section": "education", "title": "Western Washington University", "detail": "B.S. Computer & Electrical Engineering · Bellingham, WA", "period": "Sep. 2025–expected May 2028",
-      "summary": "Transferred in Fall 2025 with junior standing. Pursuing a degree at the intersection of computing and electrical engineering.",
+      "summary": "Pursuing a B.S. in Computer & Electrical Engineering (EECE), with expected graduation in May 2028. Transferred in Fall 2025 with junior standing.",
       "skills": ["engineering"]
     },
     {

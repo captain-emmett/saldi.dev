@@ -18,15 +18,19 @@
   <div class="page">
     <header class="site-header">
       <a class="brand" href="../../" aria-label="Emmett Saldivar, home"><span class="monogram" aria-hidden="true">es.</span><span>Emmett Saldivar</span></a>
-      <nav aria-label="Main navigation"><a href="../../#work">Projects</a><a href="../../#skills">Skills</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
+      <nav aria-label="Main navigation"><a href="../../">Résumé</a><a href="../">Projects</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
     </header>
     <main id="main">
       <section class="project-intro" aria-labelledby="project-title">
-        <a class="back-link" href="../../#work">All projects</a>
+        <a class="back-link" href="../">All projects</a>
         <div class="eyebrow">02 / hardware & exploration</div>
         <h1 id="project-title">Pi Constellation<br>Mapper</h1>
         <div class="project-summary"><p>A portable window into the night sky. Part field instrument, part sketchbook for the patterns you find overhead.</p><span class="tag">Raspberry Pi / In progress</span></div>
-        <div class="project-skill-links" aria-label="Explore these skills across my résumé"><a href="../../?skill=rust#skills">Rust</a><a href="../../?skill=embedded#skills">Embedded systems</a><a href="../../?skill=electronics#skills">Electronics</a><a href="../../?skill=prototyping#skills">Hardware prototyping</a><a href="../../?skill=3d-design#skills">3D modeling &amp; printing</a><a href="../../?skill=debugging#skills">Testing &amp; debugging</a></div>
+        <nav class="project-jump-links" aria-label="On this project page"><a href="#overview">The idea</a><a href="#hardware">Hardware list</a><a href="#dev-log">Development log</a></nav>
+      </section>
+      <section class="project-details project-overview" id="overview" aria-labelledby="idea-title">
+        <div><span class="eyebrow">The idea</span><h2 id="idea-title">Explore the sky.<br>Save what you see.</h2></div>
+        <div class="project-copy"><p>I’m developing a dedicated device for exploring the night sky and making constellations of your own. The intended experience is to find stars, connect them into a pattern, give it a name and story, and save it locally.</p><p>The Rust and Macroquad prototype displays a real bright-star catalog with touch and mouse controls. GPS and orientation sensors are planned to align the view with the device’s location and direction; the software currently uses a development location.</p><p>Hardware work includes component-fit and enclosure prototypes. Sensor integration, portable power, cooling, and outdoor testing remain part of the work ahead.</p><a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper/tree/codex/initial-starmap">Explore the prototype branch on GitHub</a></div>
       </section>
       <section class="model-section" aria-labelledby="model-title">
         <div class="section-heading"><h2 id="model-title">A closer look</h2><span class="eyebrow">Interactive 3D</span></div>
@@ -41,11 +45,37 @@
         </figure>
         <p class="placeholder-note">A cube for now. The mapper's model will live here as the project takes shape.</p>
       </section>
-      <section class="project-details" aria-labelledby="idea-title">
-        <div><span class="eyebrow">The idea</span><h2 id="idea-title">Find your bearings.<br>Make your own map.</h2></div>
-        <div class="project-copy"><p>I'm developing a portable device for exploring the visible night sky and drawing, naming, and saving custom constellations through a touch interface.</p><p>The prototype uses a Raspberry Pi 5, a 5-inch Touch Display 2, a GPS module, a BNO085 orientation sensor, and a custom interface in Rust.</p><p>Work so far includes touch and kiosk behavior, sensor planning, power and cooling needs, and 3D-printed enclosure prototypes. The project is still in progress, with component fit and usability guiding the hardware design.</p><a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper">Code, hardware & project notes</a></div>
+      <section class="project-documentation" id="hardware" aria-labelledby="hardware-title">
+        <div class="section-heading"><h2 id="hardware-title">Hardware list</h2><span class="eyebrow">Prototype components</span></div>
+        <p class="documentation-intro">The documented prototype components and open hardware decisions. Listing a sensor here describes the hardware plan; GPS and orientation input are still awaiting software integration.</p>
+        <div class="hardware-table-wrap"><table class="hardware-table">
+          <caption>Pi Constellation Mapper components and open hardware decisions</caption>
+          <thead><tr><th scope="col">Part</th><th scope="col">Quantity</th><th scope="col">Role &amp; build notes</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Raspberry Pi 5 · 8 GB</th><td>1</td><td>Runs the native Rust application and hosts the hardware interfaces.</td></tr>
+            <tr><th scope="row">Raspberry Pi Touch Display 2 · 5-inch</th><td>1</td><td>Primary display and touch input. On-screen zoom controls support the Pi’s touch-backend behavior.</td></tr>
+            <tr><th scope="row">Adafruit Mini GPS</th><td>1</td><td>Planned location and time input. Exact module revision and final connection details are not recorded.</td></tr>
+            <tr><th scope="row">Adafruit BNO085 IMU</th><td>1</td><td>Planned orientation and movement input. Calibration and the sensor interface are still to be integrated.</td></tr>
+            <tr><th scope="row">3D-printed enclosure prototypes</th><td>Not recorded</td><td>Explore component fit and handling. Final printed-piece count, material, dimensions, and fasteners are not documented.</td></tr>
+            <tr><th scope="row">Portable power</th><td>To be selected</td><td>Battery, power regulation, charging hardware, and runtime targets remain open decisions.</td></tr>
+            <tr><th scope="row">Cooling</th><td>To be selected</td><td>Final cooling solution and ventilation layout remain open decisions.</td></tr>
+            <tr><th scope="row">Cables, connectors &amp; mounting hardware</th><td>Not recorded</td><td>A final inventory of the display connection, sensor wiring, connectors, and fasteners is still needed.</td></tr>
+            <tr><th scope="row">Additional physical controls</th><td>Undecided</td><td>Touch is the current interface. Any additional buttons or controls remain a design decision.</td></tr>
+          </tbody>
+        </table></div>
+        <a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper/blob/main/README.md#current-hardware">Hardware plan on GitHub</a>
       </section>
-      <nav class="project-pagination" aria-label="More projects"><a href="../../#work">All projects</a><a href="../one-button-arcade/">Explore One-Button Arcade</a></nav>
+      <section class="project-documentation dev-log-section" id="dev-log" aria-labelledby="log-title">
+        <div class="section-heading"><h2 id="log-title">Development log</h2><span class="eyebrow">Build notes &amp; updates</span></div>
+        <p class="documentation-intro">Notes from the software and hardware work. The native prototype is on the <a href="https://github.com/captain-emmett/pi-constellation-mapper/tree/codex/initial-starmap">prototype branch</a>, with a <a href="https://github.com/captain-emmett/pi-constellation-mapper/pull/2">draft pull request</a> tracking the work.</p>
+        <div class="dev-log">
+          <article class="dev-entry" aria-labelledby="log-enclosure"><div class="dev-entry-meta"><span>In progress</span><span>Hardware</span></div><div class="dev-entry-body"><h3 id="log-enclosure">Finding a usable enclosure</h3><p>Working through 3D-printed enclosure prototypes with component fit and usability guiding the design. Power, cooling, sensor placement, and access to connections still need to come together in the final layout.</p><p>Build photos and enclosure files have not been added to this page yet.</p><a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper/blob/main/README.md#current-hardware">Read the hardware plan</a></div></article>
+          <article class="dev-entry" aria-labelledby="log-kiosk"><div class="dev-entry-meta"><time datetime="2026-07-06">July 6, 2026</time><span>Pi interface</span></div><div class="dev-entry-body"><h3 id="log-kiosk">Touch controls and kiosk behavior</h3><p>Added on-screen zoom controls and refined fullscreen behavior for the Touch Display 2. A kiosk setup helper configures the Raspberry Pi desktop’s labwc window rule and panel autohide so the application can use the display cleanly.</p><a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper/commit/74513c8fe64b03e82af600d70b07ce007aca18ad">View the kiosk update</a></div></article>
+          <article class="dev-entry" aria-labelledby="log-starmap"><div class="dev-entry-meta"><time datetime="2026-07-05">July 5, 2026</time><span>Rust prototype</span></div><div class="dev-entry-body"><h3 id="log-starmap">Getting the star map on screen</h3><p>Started a native Rust and Macroquad prototype with a small catalog of real bright stars, sky-coordinate calculations, drag and swipe controls, zoom, and star inspection. The current time and a temporary observer location provide the first view while sensor integration is pending.</p><a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper/commit/1712d9062f7f6c587de427ada729a81636387d85">View the initial prototype</a></div></article>
+          <article class="dev-entry" aria-labelledby="log-vision"><div class="dev-entry-meta"><time datetime="2026-07-05">July 5, 2026</time><span>Project direction</span></div><div class="dev-entry-body"><h3 id="log-vision">Defining the explore-and-create loop</h3><p>Set the direction for a dedicated sky companion: explore real stars, connect them, name a constellation, and save its story. The hardware plan centers on a Raspberry Pi 5, a touch display, GPS, and orientation sensing.</p><a class="text-link" href="https://github.com/captain-emmett/pi-constellation-mapper/blob/main/docs/vision.md">Read the project vision</a></div></article>
+        </div>
+      </section>
+      <nav class="project-pagination" aria-label="More projects"><a href="../">All projects</a><a href="../one-button-arcade/">One-Button Arcade →</a></nav>
     </main>
     <footer><span>© 2026 Emmett Saldivar</span><span>Always a work in progress.</span><a href="#main">Back to top</a></footer>
   </div>

@@ -22,7 +22,7 @@ const entryHTML = (entry, index) => {
   return `<article id="${escape(entry.id)}" class="resume-entry ${project ? 'project' : 'resume-row'}${entry.featured ? ' featured' : ''}${entry.compact ? ' side-project' : ''}" data-skills="${entry.skills.map(escape).join(' ')}">
     ${project ? `<span class="project-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>` : `<div class="entry-date">${escape(entry.period || 'Student involvement')}</div>`}
     <div class="project-main">
-      <div class="project-heading"><h3>${escape(entry.title)}</h3>${entry.label ? `<span class="tag">${escape(entry.label)}</span>` : ''}</div>
+      <div class="project-heading"><h3>${project && entry.href ? `<a href="${escape(entry.href)}">${escape(entry.title)}</a>` : escape(entry.title)}</h3>${entry.label ? `<span class="tag">${escape(entry.label)}</span>` : ''}</div>
       ${entry.detail || (project && entry.period) ? `<div class="entry-detail">${escape([project && entry.period, entry.detail].filter(Boolean).join(' / '))}</div>` : ''}
       <p>${escape(entry.summary)}</p>
       ${tags(entry)}
@@ -38,15 +38,29 @@ const sectionsHTML = data.sections.map(section => {
   return `<section class="resume-section" id="${escape(section.id)}" data-resume-section aria-labelledby="${escape(section.id)}-title">
     <div class="section-heading"><h2 id="${escape(section.id)}-title">${escape(section.title)} <span class="section-count">${entries.length}</span></h2><span class="eyebrow">${escape(section.caption)}</span></div>
     ${entries.map(entryHTML).join('\n')}
+    ${section.id === 'work' ? '<a class="text-link project-notebook-link" href="./projects/">Browse the project notebook <span aria-hidden="true">↗</span></a>' : ''}
   </section>`;
 }).join('\n');
 const template = fs.readFileSync(path.join(__dirname, 'resume-template.html'), 'utf8');
 const output = template.replace('<!-- SKILL_FILTERS -->', skillHTML).replace('<!-- RESUME_SECTIONS -->', sectionsHTML).replaceAll('{{ENTRY_COUNT}}', String(data.entries.length)).replaceAll('{{SKILL_COUNT}}', String(Object.values(counts).filter(Boolean).length)).replace(/[\t ]+$/gm, '');
-const destination = path.join(root, 'index.html');
+const projects = data.entries.filter(entry => entry.section === 'work');
+const projectHTML = projects.map((entry, index) => `<article class="notebook-project" id="${escape(entry.id)}">
+  <span class="project-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+  <div class="project-main">
+    <div class="project-heading"><h3><a href="${escape(entry.href.replace('./projects/', './'))}">${escape(entry.title)}</a></h3>${entry.label ? `<span class="tag">${escape(entry.label)}</span>` : ''}</div>
+    ${entry.detail ? `<p class="notebook-tools">${escape(entry.detail)}</p>` : ''}
+    <p>${escape(entry.overview || entry.summary)}</p>
+  </div>
+  <div class="project-links"><a href="${escape(entry.href.replace('./projects/', './'))}">Read the overview <span aria-hidden="true">↗</span></a></div>
+</article>`).join('\n');
+const projectIndex = fs.readFileSync(path.join(__dirname, 'project-index-template.html'), 'utf8').replace('<!-- PROJECTS -->', projectHTML).replaceAll('{{PROJECT_COUNT}}', String(projects.length)).replace(/[\t ]+$/gm, '');
+const destinations = [[path.join(root, 'index.html'), output], [path.join(root, 'projects/index.html'), projectIndex]];
 if (process.argv.includes('--check')) {
-  if (fs.readFileSync(destination, 'utf8').replace(/\r\n/g, '\n') !== output.replace(/\r\n/g, '\n')) throw new Error('Run node scripts/build-resume.cjs to update index.html');
-  console.log(`Homepage is current: ${data.entries.length} entries, ${Object.values(counts).filter(Boolean).length} skills.`);
+  for (const [destination, contents] of destinations) {
+    if (fs.readFileSync(destination, 'utf8').replace(/\r\n/g, '\n') !== contents.replace(/\r\n/g, '\n')) throw new Error('Run node scripts/build-resume.cjs to update generated pages');
+  }
+  console.log(`Homepage and project index are current: ${data.entries.length} entries, ${Object.values(counts).filter(Boolean).length} skills, ${projects.length} projects.`);
 } else {
-  fs.writeFileSync(destination, output);
-  console.log(`Built index.html: ${data.entries.length} entries.`);
+  for (const [destination, contents] of destinations) fs.writeFileSync(destination, contents);
+  console.log(`Built homepage and project index: ${data.entries.length} entries, ${projects.length} projects.`);
 }

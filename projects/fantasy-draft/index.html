@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f2">
+  <meta name="description" content="Fantasy Draft Command Center, Emmett Saldivar's browser app for tracking fantasy-football picks, targets, and roster needs with saved state and offline support.">
+  <title>Fantasy Draft Command Center — Emmett Saldivar</title>
+  <link rel="canonical" href="https://saldi.dev/projects/fantasy-draft/">
+  <link rel="stylesheet" href="../../portfolio.css">
+  <link rel="stylesheet" href="../../project.css">
+  <script src="../../portfolio.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Emmett Saldivar, home"><span class="monogram" aria-hidden="true">es.</span><span>Emmett Saldivar</span></a>
+      <nav aria-label="Main navigation"><a href="../../">Résumé</a><a href="../">Projects</a><a href="https://github.com/captain-emmett">GitHub</a></nav>
+    </header>
+    <main id="main">
+      <section class="project-intro" aria-labelledby="project-title">
+        <a class="back-link" href="../">All projects</a>
+        <div class="eyebrow">Browser app / 2026</div>
+        <h1 id="project-title">Fantasy Draft<br>Command Center</h1>
+        <div class="project-summary"><p>A draft-day workspace for tracking picks, comparing available players, and keeping a fantasy-football roster organized.</p><span class="tag">JavaScript / HTML / CSS</span></div>
+        <div class="project-skill-links" aria-label="Explore these skills across my résumé"><a href="../../?skill=web-dev#skills">Web development</a><a href="../../?skill=javascript#skills">JavaScript</a><a href="../../?skill=html-css#skills">HTML &amp; CSS</a></div>
+        <p><a class="primary-link" href="../../fantasy-draft/">Open the app ↗</a></p>
+      </section>
+      <section class="project-details" aria-labelledby="idea-title">
+        <div><span class="eyebrow">The idea</span><h2 id="idea-title">Keep draft day<br>in one place.</h2></div>
+        <div class="project-copy"><p>The Command Center combines a player board, draft log, targets, notes, and roster view in a browser app. As players are drafted, it tracks the current pick and upcoming turns, while the roster view shows open positions and bye-week overlap.</p><p>The app works on desktop and mobile, saves the draft in the current browser, and can be added to a phone's home screen.</p></div>
+      </section>
+      <section class="project-details" aria-labelledby="scope-title">
+        <div><span class="eyebrow">Technical scope</span><h2 id="scope-title">A small app<br>with a saved state.</h2></div>
+        <div class="project-copy"><p><strong>Interface:</strong> responsive HTML and CSS with JavaScript for filtering players, logging picks, tracking roster needs, and adjusting league settings.</p><p><strong>Draft logic:</strong> supports snake and linear draft order, selectable scoring, targets, and recommendations based on ranking, roster needs, scarcity, bye weeks, and draft strategy.</p><p><strong>Persistence:</strong> local browser storage saves draft state. JSON export/import moves it between devices; CSV export provides a draft log.</p><p><strong>Offline support:</strong> a service worker caches the app after the first successful visit. The static app uses bundled player data and has no server or database.</p><a class="text-link" href="https://github.com/captain-emmett/fantasy-draft-2026">Source code &amp; README on GitHub ↗</a></div>
+      </section>
+      <section class="project-details" aria-labelledby="hardware-title">
+        <div><span class="eyebrow">Hardware</span><h2 id="hardware-title">Use the device<br>already with you.</h2></div>
+        <div class="project-copy"><p>Runs in a browser on a computer, tablet, or phone. There is no dedicated hardware build or external electronic component list.</p><p>An initial online visit fills the offline cache. Drafts are saved on the current browser and device; JSON export/import provides a manual way to transfer them.</p></div>
+      </section>
+      <section class="project-documentation dev-log-section" aria-labelledby="log-title">
+        <div class="section-heading"><h2 id="log-title">Development notes</h2><span class="eyebrow">Interface / state / offline use</span></div>
+        <div class="dev-log">
+        <article class="dev-entry"><div class="dev-entry-meta"><span>Development note</span></div><div class="dev-entry-body"><h3>Connecting the board to the roster</h3><p>Recording a pick updates player availability, the draft log, upcoming turns, and roster needs. Recommendations consider the user's roster and chosen strategy alongside the bundled player rankings.</p><p>Player data is a saved 2026 snapshot. The app does not fetch live rankings or act as a projection model.</p><figure><img src="../../assets/images/fantasy-draft-board.png" alt="Fantasy Draft Command Center showing available players, an empty roster, and suggested draft picks." width="1280" height="800" loading="lazy" decoding="async"><figcaption>Draft board with an empty roster and suggested picks. Screenshot of the local app.</figcaption></figure></div></article>
+        <article class="dev-entry"><div class="dev-entry-meta"><span>Development note</span></div><div class="dev-entry-body"><h3>Keeping the draft available</h3><p>Browser storage preserves picks, targets, notes, and settings between visits. JSON backups provide a separate copy and a way to move the draft to another browser or device.</p></div></article>
+        <article class="dev-entry"><div class="dev-entry-meta"><span>Development note</span></div><div class="dev-entry-body"><h3>Packaging for desktop and mobile</h3><p>A web app manifest and service worker support home-screen installation and offline use after the first load. The portfolio hosts the app at its own address so the résumé and draft workspace can be opened separately.</p><a class="text-link" href="../../fantasy-draft/">Try Fantasy Draft Command Center ↗</a></div></article>
+        </div>
+      </section>
+      <nav class="project-pagination" aria-label="More projects"><a href="../">All projects</a><a href="../one-button-arcade/">Next: One-Button Arcade</a></nav>
+    </main>
+    <footer><span>© 2026 Emmett Saldivar</span><a href="../../">Back to résumé</a><a href="#main">Back to top</a></footer>
+  </div>
+</body>
+</html>
